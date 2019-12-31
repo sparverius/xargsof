@@ -17,7 +17,9 @@
 #define INCLUDE_LOCATION
 *)
 
+(*
 #ifndef INCLUDE_LOCATION
+*)
 
 implement{} argsof_t0int(x0) = tlist1(x0.node())
 implement{} argsof_t0chr(x0) = tlist1(x0.node())
@@ -48,7 +50,10 @@ implement{} argsof_d0atype(x0) = tlist1(x0.node())
 implement{} argsof_d0atcon(x0) = tlist1(x0.node())
 //
 implement{a}(*tmp*) argsof_sl0abled(x0) = tlist1(x0)
+(*
 #else
+*)
+(*
 implement{} argsof_t0int(x0) = tlist2(x0.loc(), x0.node())
 implement{} argsof_t0chr(x0) = tlist2(x0.loc(), x0.node())
 implement{} argsof_t0flt(x0) = tlist2(x0.loc(), x0.node())
@@ -79,6 +84,7 @@ implement{} argsof_d0atcon(x0) = tlist2(x0.loc(), x0.node())
 //
 implement{a}(*tmp*) argsof_sl0abled(x0) = tlist1(x0)
 #endif
+*)
 
 
 implement{} argsof_effs0expopt(x0) = tlist1(x0)
@@ -160,6 +166,18 @@ argsof_tag_l0abl_node(l0) =
 case+ l0 of
 | L0ABLsome(lab) => tlist1(lab)
 | L0ABLnone(tok) => tlist1(tok)
+)
+
+
+implement{}
+argsof_tag_g0exp_node(x0) =
+(
+case+ x0 of
+| G0Eid(g0eid) => tlist1(g0eid)
+| G0Eint(t0int) => tlist1(t0int)
+| G0Eapps(g0explst) => tlist1(g0explst)
+| G0Elist(token0, g0explst, token1) => tlist3(token0, g0explst, token1)
+| G0Enone(token) => tlist1(token)
 )
 
 

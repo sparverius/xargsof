@@ -155,6 +155,8 @@ case+ x0 of
 | D3Enone0() => tlist0()
 | D3Enone1(d2esrc) => tlist1(d2esrc)
 | D3Enone2(d3esrc) => tlist1(d3esrc)
+//
+| D3Epcon(d3e1, lab2) => tlist2(d3e1, lab2)
 )
 
 

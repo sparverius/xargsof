@@ -20,6 +20,9 @@ implement argsof_token(tok) = "token"
 implement argsof_tnode(tnd) = "tnode"
 *)
 
+implement{} argsof_token_tbox(tok) = tlist1(tok.node())
+implement{} argsof_tokenopt(tok) = tlist1(tok)
+
 #ifndef INCLUDE_LOCATION
 implement{} argsof_token(tok) = tlist1(tok.node())
 #else

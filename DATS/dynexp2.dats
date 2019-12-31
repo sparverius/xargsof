@@ -129,6 +129,9 @@ case x0 of
 | D2Panno(d2p1, s2e2) => tlist2(d2p1, s2e2)
 | D2Pnone0() => tlist0()
 | D2Pnone1(d1psrc) => tlist1(d1psrc)
+//
+| D2Pflat(d2p1) => tlist1(d2p1)
+| D2Pfree(d2p1) => tlist1(d2p1)
 )
 
 

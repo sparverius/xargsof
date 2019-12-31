@@ -34,9 +34,11 @@ overload totype with totype_ti0arglst
 
 fun{} totype_a0typ : totype_type(a0typ)
 fun{} totype_a0typlst : totype_type(a0typlst)
+fun{} totype_a0typopt : totype_type(a0typopt)
 fun{} totype_a0typlstopt : totype_type(a0typlstopt)
 overload totype with totype_a0typ
 overload totype with totype_a0typlst
+overload totype with totype_a0typopt
 overload totype with totype_a0typlstopt
 
 fun{} totype_d0arg : totype_type(d0arg)
@@ -325,6 +327,11 @@ overload argsof with argsof_labd0patlst
 fun{}(*{}*) argsof_labd0explst : argsof_type(labd0explst)
 overload argsof with argsof_labd0explst
 
+(*
+fun{} argsof_q0arg_tbox : argsof_type(q0arg_tbox)
+overload argsof with argsof_q0arg_tbox of 1
+*)
+
 fun{} argsof_q0arg : argsof_type(q0arg)
 fun{} argsof_q0arglst : argsof_type(q0arglst)
 overload argsof with argsof_q0arg
@@ -347,8 +354,12 @@ overload argsof with argsof_ti0arglst
 
 fun{} argsof_a0typ : argsof_type(a0typ)
 fun{} argsof_a0typlst : argsof_type(a0typlst)
+fun{} argsof_a0typopt : argsof_type(a0typopt)
+fun{} argsof_a0typlstopt : argsof_type(a0typlstopt)
 overload argsof with argsof_a0typ
 overload argsof with argsof_a0typlst
+overload argsof with argsof_a0typopt
+overload argsof with argsof_a0typlstopt
 
 fun{} argsof_d0arg : argsof_type(d0arg)
 fun{} argsof_d0arglst : argsof_type(d0arglst)
