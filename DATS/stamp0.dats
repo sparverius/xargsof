@@ -7,4 +7,4 @@
 
 #include "./mac.dats"
 
-implement{} argsof_stamp(x0) = tlist1(x0)
+implement{} argsof_stamp(x0) = tlist1(stamp2uint(x0))
