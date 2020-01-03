@@ -27,11 +27,15 @@ implement{} argsof_token_tbox(tok) = tlist1(tok.node())
 *)
 implement{} argsof_tokenopt(tok) = tlist1(tok)
 
+(*
 #ifndef INCLUDE_LOCATION
+*)
 implement{} argsof_token(tok) = tlist1(tok.node())
+(*
 #else
 implement{} argsof_token(tok) = tlist2(tok.loc(), tok.node())
 #endif
+*)
 
 (*
 implement{}
