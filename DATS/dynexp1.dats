@@ -21,7 +21,9 @@
 #define INCLUDE_LOCATION
 *)
 
+(*
 #ifndef INCLUDE_LOCATION
+*)
 implement{} argsof_q1arg(x0) = tlist1(x0.node())
 implement{} argsof_a1typ(x0) = tlist1(x0.node())
 implement{} argsof_d1arg(x0) = tlist1(x0.node())
@@ -39,6 +41,7 @@ implement{} argsof_v1aldecl(x0) = tlist1(x0)
 implement{} argsof_v1ardecl(x0) = tlist1(x0)
 implement{} argsof_f1undecl(x0) = tlist1(x0)
 implement{} argsof_d1cstdecl(x0) = tlist1(x0)
+(*
 #else
 implement{} argsof_q1arg(x0) = tlist2(x0.loc(), x0.node())
 implement{} argsof_a1typ(x0) = tlist2(x0.loc(), x0.node())
@@ -58,6 +61,7 @@ implement{} argsof_v1ardecl(x0) = tlist2(x0.loc(), x0)
 implement{} argsof_f1undecl(x0) = tlist2(x0.loc(), x0)
 implement{} argsof_d1cstdecl(x0) = tlist2(x0.loc(), x0)
 #endif
+*)
 
 
 implement{} argsof_f1unarrow(x0) = tlist1(x0)

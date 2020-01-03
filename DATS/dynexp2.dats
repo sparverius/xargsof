@@ -15,6 +15,7 @@
 #staload "./../SATS/staexp1.sats"
 #staload "./../SATS/dynexp1.sats"
 #staload "./../SATS/staexp2.sats"
+#staload "./../SATS/statyp2.sats"
 //
 #include "./mac.dats"
 //
@@ -23,7 +24,9 @@
 #define INCLUDE_LOCATION
 *)
 
+(*
 #ifndef INCLUDE_LOCATION
+*)
 implement{} argsof_f2arg(x0) = tlist1(x0.node())
 implement{} argsof_d2pat(x0) = tlist1(x0.node())
 implement{} argsof_d2exp(x0) = tlist1(x0.node())
@@ -32,16 +35,20 @@ implement{} argsof_d2clau(x0) = tlist1(x0.node())
 implement{} argsof_d2gua(x0) = tlist1(x0.node())
 implement{} argsof_d2gpat(x0) = tlist1(x0.node())
 
-implement{} argsof_d2con(x0) = tlist1(x0)
-implement{} argsof_d2cst(x0) = tlist1(x0)
-implement{} argsof_d2var(x0) = tlist1(x0)
+implement{} argsof_d2con(x0) = tlist3(x0.sym(), x0.sexp(), x0.type())
+implement{} argsof_d2var(x0) =
+tlist3(x0.sym(), x0.type(), x0.tqas())
+(* tlist4(x0.sym(), x0.sexp(), x0.type(), x0.tqas()) *)
+implement{} argsof_d2cst(x0) =
+tlist5(x0.sym(), x0.sexp(), x0.type(), x0.tqas(), d2cst_get_s2vs(x0))
 
-implement{} argsof_sq2arg(x0) = tlist1(x0)
-implement{} argsof_tq2arg(x0) = tlist1(x0)
-implement{} argsof_ti2arg(x0) = tlist2(x0, x0.s2es())
+implement{} argsof_sq2arg(x0) = tlist1(x0.s2vs())
+implement{} argsof_tq2arg(x0) = tlist1(x0.s2vs())
+implement{} argsof_ti2arg(x0) = tlist1(x0.s2es())
 
 implement{} argsof_v2aldecl(x0) = tlist1(x0)
 implement{} argsof_f2undecl(x0) = tlist1(x0)
+(*
 #else
 implement{} argsof_f2arg(x0) = tlist2(x0.loc(), x0.node())
 implement{} argsof_d2pat(x0) = tlist2(x0.loc(), x0.node())
@@ -62,6 +69,7 @@ implement{} argsof_ti2arg(x0) = tlist3(x0.loc(), x0, x0.s2es())
 implement{} argsof_v2aldecl(x0) = tlist2(x0.loc(), x0)
 implement{} argsof_f2undecl(x0) = tlist2(x0.loc(), x0)
 #endif
+*)
 
 
 implement{} argsof_impld2cst(x0) = tlist1(x0)

@@ -1,4 +1,4 @@
-abstype ret_list_type_t = ptr
+abst@ype ret_list_type_t = ptr
 
 typedef ret_list_type = ret_list_type_t
 typedef ret_type = List0(ret_list_type)

@@ -21,7 +21,9 @@
 #define INCLUDE_LOCATION
 *)
 
+(*
 #ifndef INCLUDE_LOCATION
+*)
 implement{} argsof_g1exp(x0) = tlist1(x0.node())
 implement{} argsof_g1marg(x0) = tlist1(x0.node())
 implement{} argsof_sort1(x0) = tlist1(x0.node())
@@ -37,6 +39,7 @@ implement{} argsof_s1uni(x0) = tlist1(x0.node())
 implement{} argsof_s1exp(x0) = tlist1(x0.node())
 implement{} argsof_d1atype(x0) = tlist1(x0.node())
 implement{} argsof_d1atcon(x0) = tlist1(x0.node())
+(*
 #else
 implement{} argsof_g1exp(x0) = tlist2(x0.loc(), x0.node())
 implement{} argsof_g1marg(x0) = tlist2(x0.loc(), x0.node())
@@ -54,6 +57,7 @@ implement{} argsof_s1exp(x0) = tlist2(x0.loc(), x0.node())
 implement{} argsof_d1atype(x0) = tlist2(x0.loc(), x0.node())
 implement{} argsof_d1atcon(x0) = tlist2(x0.loc(), x0.node())
 #endif
+*)
 
 
 implement{} argsof_effs1expopt(x0) = tlist1(x0)

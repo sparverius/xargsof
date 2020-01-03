@@ -29,6 +29,9 @@ overload totype with totype_t2ype_node
 
 (* ****** ****** *)
 
+fun{} argsof_t2xtv : argsof_type(t2xtv)
+overload argsof with argsof_t2xtv
+
 fun{} argsof_labt2ype : argsof_type(labt2ype)
 fun{} argsof_labt2ypelst : argsof_type(labt2ypelst)
 overload argsof with argsof_labt2ype

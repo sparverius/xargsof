@@ -26,10 +26,12 @@
 #define INCLUDE_LOCATION
 *)
 
-#ifndef INCLUDE_LOCATION
-implement{} argsof_s2cst(x0) = tlist3(x0.stamp(), x0.sym(), x0.sort())
+(* #ifndef INCLUDE_LOCATION *)
+implement{} argsof_s2cst(x0) =
+  tlist3(x0.stamp(), x0.sym(), x0.sort())
   //tlist5(x0.stamp(), x0.sym(), x0.sort(), x0.sexp(), x0.type())
 implement{} argsof_s2xtv(x0) = tlist3(x0.stamp(), x0.sort(), x0.sexp())
+(*
 #else
 implement{} argsof_s2cst(x0) =
   tlist4(x0.loc(), x0.stamp(), x0.sym(), x0.sort())
@@ -37,6 +39,8 @@ implement{} argsof_s2cst(x0) =
 implement{} argsof_s2xtv(x0) =
   tlist4(x0.loc(), x0.stamp(), x0.sort(), x0.sexp())
 #endif
+*)
+
 
 
 implement{} argsof_s2var(x0) = tlist3(x0.stamp(), x0.sym(), x0.sort())
@@ -63,7 +67,7 @@ implement{} argsof_s2cstlst(x) = tlist1(x)
 implement{} argsof_s2cstopt(x) = tlist1(x)
 implement{} argsof_s2expopt(x) = tlist1(x)
 implement{} argsof_labs2explst(x) = tlist1(x)
-
+implement{} argsof_fmodenvopt(x) = tlist1(x)
 
 
 implement{}

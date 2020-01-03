@@ -107,7 +107,9 @@ overload totype with totype_s2xtv
 
 
 fun{} argsof_fmodenv : argsof_type(fmodenv)
+fun{} argsof_fmodenvopt : argsof_type(fmodenvopt)
 overload argsof with argsof_fmodenv
+overload argsof with argsof_fmodenvopt
 
 fun{} argsof_s2xtv : argsof_type(s2xtv)
 overload argsof with argsof_s2xtv

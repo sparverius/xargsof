@@ -9,8 +9,10 @@ overload totype with totype_tnode
 fun{} totype_token : totype_type(token)
 overload totype with totype_token
 
+(*
 fun{} totype_token_tbox : totype_type(token_tbox)
 overload totype with totype_token_tbox of 1
+*)
 
 fun{} totype_tokenopt : totype_type(tokenopt)
 overload totype with totype_tokenopt
@@ -27,8 +29,10 @@ overload argsof with argsof_token
 fun{} argsof_tokenopt : argsof_type(tokenopt)
 overload argsof with argsof_tokenopt
 
+(*
 fun{} argsof_token_tbox : argsof_type(token_tbox)
 overload argsof with argsof_token_tbox of 1
+*)
 
 
 fun{} argsof_tnode : argsof_type(tnode)

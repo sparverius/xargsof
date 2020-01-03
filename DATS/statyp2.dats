@@ -11,6 +11,7 @@
 #staload "./../SATS/lexing.sats"
 #staload "./../SATS/filpath.sats"
 #staload "./../SATS/symbol.sats"
+#staload "./../SATS/stamp0.sats"
 #staload "./../SATS/staexp0.sats"
 #staload "./../SATS/dynexp0.sats"
 #staload "./../SATS/staexp1.sats"
@@ -25,6 +26,8 @@
 implement{} argsof_t2ype(x0) = tlist1(x0)
 implement{} argsof_labt2ype(lt2p) = tlist1(lt2p)
 implement{} argsof_labt2ypelst(lt2ps) = tlist1(lt2ps)
+
+implement{} argsof_t2xtv(x0) = tlist2(x0.stamp(), x0.type())
 
 
 (* implement{} argsof_t2ype_node(x0) = argsof_tag_t2ype_node<>(x0) *)
