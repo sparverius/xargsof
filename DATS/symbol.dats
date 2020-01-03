@@ -8,4 +8,5 @@
 
 #include "./mac.dats"
 
-implement{} argsof_symbol(x0) = tlist2(x0.stamp(), x0.name())
+implement{} argsof_symbol(x0) = tlist1(x0.name())
+  (* tlist2(x0.stamp(), x0.name()) *)

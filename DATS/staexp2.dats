@@ -28,9 +28,12 @@
 
 (* #ifndef INCLUDE_LOCATION *)
 implement{} argsof_s2cst(x0) =
-  tlist3(x0.stamp(), x0.sym(), x0.sort())
+  tlist2(x0.stamp(), x0.sym())
+  (* tlist3(x0.stamp(), x0.sym(), x0.sort()) *)
   //tlist5(x0.stamp(), x0.sym(), x0.sort(), x0.sexp(), x0.type())
-implement{} argsof_s2xtv(x0) = tlist3(x0.stamp(), x0.sort(), x0.sexp())
+implement{} argsof_s2xtv(x0) =
+  tlist2(x0.stamp(), x0.sort())
+  (* tlist3(x0.stamp(), x0.sort(), x0.sexp()) *)
 (*
 #else
 implement{} argsof_s2cst(x0) =
@@ -43,7 +46,9 @@ implement{} argsof_s2xtv(x0) =
 
 
 
-implement{} argsof_s2var(x0) = tlist3(x0.stamp(), x0.sym(), x0.sort())
+implement{} argsof_s2var(x0) =
+  tlist2(x0.stamp(), x0.sym())
+  (* tlist3(x0.stamp(), x0.sym(), x0.sort()) *)
 implement{} argsof_sort2(s2t0) = tlist1(s2t0)
 implement{} argsof_t2bas(s2tb) = tlist1(s2tb)
 implement{} argsof_t2abs(x0) = tlist2(x0.stamp(), x0.sym())

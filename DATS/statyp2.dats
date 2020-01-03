@@ -39,7 +39,7 @@ case+ x0 of
 | T2Pbas(sym) => tlist1(sym)
 | T2Pcst(s2c) => tlist1(s2c)
 | T2Pvar(s2v) => tlist1(s2v)
-| T2Pxtv(xtv) => tlist1(xtv)
+| T2Pxtv(xtv) => tlist1(xtv.type())
 | T2Papp(t2p1, t2ps) => tlist2(t2p1, t2ps)
 | T2Plft(t2p1) => tlist1(t2p1)
 | T2Plam(s2vs, t2p1) => tlist2(s2vs, t2p1)

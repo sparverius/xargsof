@@ -35,12 +35,18 @@ implement{} argsof_d2clau(x0) = tlist1(x0.node())
 implement{} argsof_d2gua(x0) = tlist1(x0.node())
 implement{} argsof_d2gpat(x0) = tlist1(x0.node())
 
-implement{} argsof_d2con(x0) = tlist3(x0.sym(), x0.sexp(), x0.type())
+implement{} argsof_d2con(x0) =
+tlist2(x0.sym(), x0.type())
+(* tlist3(x0.sym(), x0.sexp(), x0.type()) *)
 implement{} argsof_d2var(x0) =
-tlist3(x0.sym(), x0.type(), x0.tqas())
+tlist2(x0.sym(), x0.type())
+(* tlist3(x0.sym(), x0.type(), x0.tqas()) *)
 (* tlist4(x0.sym(), x0.sexp(), x0.type(), x0.tqas()) *)
 implement{} argsof_d2cst(x0) =
+tlist2(x0.sym(), x0.type())
+(*
 tlist5(x0.sym(), x0.sexp(), x0.type(), x0.tqas(), d2cst_get_s2vs(x0))
+*)
 
 implement{} argsof_sq2arg(x0) = tlist1(x0.s2vs())
 implement{} argsof_tq2arg(x0) = tlist1(x0.s2vs())
