@@ -1,5 +1,4 @@
 *~
-.xq
 BUILD/*.o
 bin/xargsof
 xargsof_dats.c
