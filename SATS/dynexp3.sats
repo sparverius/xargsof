@@ -70,43 +70,35 @@ overload totype with totype_d3eclistopt
 fun{} totype_tag_ti3arg : totype_type(ti3arg)
 overload totype_tag with totype_tag_ti3arg
 
-
+fun{} totype_d3pat_node : totype_type(d3pat_node)
 fun{} totype_tag_d3pat_node : totype_type(d3pat_node)
+overload totype with totype_d3pat_node
 overload totype_tag with totype_tag_d3pat_node
 
-fun{} totype_d3pat_node : totype_type(d3pat_node)
-overload totype with totype_d3pat_node
-
-
+fun{} totype_f3arg_node : totype_type(f3arg_node)
 fun{} totype_tag_f3arg_node : totype_type(f3arg_node)
+overload totype with totype_f3arg_node
 overload totype_tag with totype_tag_f3arg_node
 
-fun{} totype_f3arg_node : totype_type(f3arg_node)
-overload totype with totype_f3arg_node
-
+fun{} totype_d3gua_node : totype_type(d3gua_node)
 fun{} totype_tag_d3gua_node : totype_type(d3gua_node)
+overload totype with totype_d3gua_node
 overload totype_tag with totype_tag_d3gua_node
 
-fun{} totype_d3gua_node : totype_type(d3gua_node)
-overload totype with totype_d3gua_node
-
+fun{} totype_d3clau_node : totype_type(d3clau_node)
 fun{} totype_tag_d3clau_node : totype_type(d3clau_node)
+overload totype with totype_d3clau_node
 overload totype_tag with totype_tag_d3clau_node
 
-fun{} totype_d3clau_node : totype_type(d3clau_node)
-overload totype with totype_d3clau_node
-
+fun{} totype_d3gpat_node : totype_type(d3gpat_node)
 fun{} totype_tag_d3gpat_node : totype_type(d3gpat_node)
+overload totype with totype_d3gpat_node
 overload totype_tag with totype_tag_d3gpat_node
 
-fun{} totype_d3gpat_node : totype_type(d3gpat_node)
-overload totype with totype_d3gpat_node
-
-fun{} totype_tag_d3exp_node : totype_type(d3exp_node)
-overload totype_tag with totype_tag_d3exp_node
-
 fun{} totype_d3exp_node : totype_type(d3exp_node)
+fun{} totype_tag_d3exp_node : totype_type(d3exp_node)
 overload totype with totype_d3exp_node
+overload totype_tag with totype_tag_d3exp_node
 
 fun{} totype_tag_t2pcast : totype_type(t2pcast)
 overload totype_tag with totype_tag_t2pcast
@@ -120,11 +112,10 @@ overload totype_tag with totype_tag_v3ardecl
 fun{} totype_tag_f3undecl : totype_type(f3undecl)
 overload totype_tag with totype_tag_f3undecl
 
-fun{} totype_tag_d3ecl_node : totype_type(d3ecl_node)
-overload totype_tag with totype_tag_d3ecl_node
-
 fun{} totype_d3ecl_node : totype_type(d3ecl_node)
+fun{} totype_tag_d3ecl_node : totype_type(d3ecl_node)
 overload totype with totype_d3ecl_node
+overload totype_tag with totype_tag_d3ecl_node
 
 
 //
@@ -191,41 +182,35 @@ overload argsof with argsof_d3eclist
 fun{} argsof_tag_ti3arg : argsof_type(ti3arg)
 overload argsof_tag with argsof_tag_ti3arg
 
+fun{} argsof_d3pat_node : argsof_type(d3pat_node)
 fun{} argsof_tag_d3pat_node : argsof_type(d3pat_node)
+overload argsof with argsof_d3pat_node
 overload argsof_tag with argsof_tag_d3pat_node
 
-fun{} argsof_d3pat_node : argsof_type(d3pat_node)
-overload argsof with argsof_d3pat_node
-
+fun{} argsof_f3arg_node : argsof_type(f3arg_node)
 fun{} argsof_tag_f3arg_node : argsof_type(f3arg_node)
+overload argsof with argsof_f3arg_node
 overload argsof_tag with argsof_tag_f3arg_node
 
-fun{} argsof_f3arg_node : argsof_type(f3arg_node)
-overload argsof with argsof_f3arg_node
-
+fun{} argsof_d3gua_node : argsof_type(d3gua_node)
 fun{} argsof_tag_d3gua_node : argsof_type(d3gua_node)
+overload argsof with argsof_d3gua_node
 overload argsof_tag with argsof_tag_d3gua_node
 
-fun{} argsof_d3gua_node : argsof_type(d3gua_node)
-overload argsof with argsof_d3gua_node
-
+fun{} argsof_d3clau_node : argsof_type(d3clau_node)
 fun{} argsof_tag_d3clau_node : argsof_type(d3clau_node)
+overload argsof with argsof_d3clau_node
 overload argsof_tag with argsof_tag_d3clau_node
 
-fun{} argsof_d3clau_node : argsof_type(d3clau_node)
-overload argsof with argsof_d3clau_node
-
+fun{} argsof_d3gpat_node : argsof_type(d3gpat_node)
 fun{} argsof_tag_d3gpat_node : argsof_type(d3gpat_node)
+overload argsof with argsof_d3gpat_node
 overload argsof_tag with argsof_tag_d3gpat_node
 
-fun{} argsof_d3gpat_node : argsof_type(d3gpat_node)
-overload argsof with argsof_d3gpat_node
-
-fun{} argsof_tag_d3exp_node : argsof_type(d3exp_node)
-overload argsof_tag with argsof_tag_d3exp_node
-
 fun{} argsof_d3exp_node : argsof_type(d3exp_node)
+fun{} argsof_tag_d3exp_node : argsof_type(d3exp_node)
 overload argsof with argsof_d3exp_node
+overload argsof_tag with argsof_tag_d3exp_node
 
 fun{} argsof_tag_t2pcast : argsof_type(t2pcast)
 overload argsof_tag with argsof_tag_t2pcast
@@ -239,8 +224,7 @@ overload argsof_tag with argsof_tag_v3ardecl
 fun{} argsof_tag_f3undecl : argsof_type(f3undecl)
 overload argsof_tag with argsof_tag_f3undecl
 
-fun{} argsof_tag_d3ecl_node : argsof_type(d3ecl_node)
-overload argsof_tag with argsof_tag_d3ecl_node
-
 fun{} argsof_d3ecl_node : argsof_type(d3ecl_node)
+fun{} argsof_tag_d3ecl_node : argsof_type(d3ecl_node)
 overload argsof with argsof_d3ecl_node
+overload argsof_tag with argsof_tag_d3ecl_node

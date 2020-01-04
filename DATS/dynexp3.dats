@@ -28,7 +28,7 @@
 #define INCLUDE_LOCATION
 *)
 
-#ifndef INCLUDE_LOCATION
+// #ifndef INCLUDE_LOCATION
 implement{} argsof_d3pat(x0) = tlist2(x0.node(), x0.type())
 implement{} argsof_f3arg(x0) = tlist1(x0.node())
 implement{} argsof_d3exp(x0) = tlist2(x0.node(), x0.type())
@@ -36,6 +36,7 @@ implement{} argsof_d3gua(x0) = tlist1(x0.node())
 implement{} argsof_d3clau(x0) = tlist1(x0.node())
 implement{} argsof_d3gpat(x0) = tlist1(x0.node())
 implement{} argsof_d3ecl(x0) = tlist1(x0.node())
+(*
 #else
 implement{} argsof_d3pat(x0) = tlist3(x0.loc(), x0.node(), x0.type())
 implement{} argsof_f3arg(x0) = tlist2(x0.loc(), x0.node())
@@ -45,6 +46,7 @@ implement{} argsof_d3clau(x0) = tlist2(x0.loc(), x0.node())
 implement{} argsof_d3gpat(x0) = tlist2(x0.loc(), x0.node())
 implement{} argsof_d3ecl(x0) = tlist2(x0.loc(), x0.node())
 #endif
+*)
 
 
 implement{} argsof_ti3arg(x0) = tlist1(x0)
@@ -71,7 +73,7 @@ implement{} argsof_d3patlst(x) = tlist1(x)
 implement{}
 argsof_tag_d3pat_node(x0) =
 (
-case- x0 of
+case+ x0 of
 | D3Pnil() => tlist0()
 | D3Pany() => tlist0()
 | D3Pint(tok) => tlist1(tok)
@@ -91,6 +93,10 @@ case- x0 of
 | D3Pnone0() => tlist0()
 | D3Pnone1(d1psrc) => tlist1(d1psrc)
 | D3Pnone2(d2psrc) => tlist1(d2psrc)
+//
+| D3Pflat(d0) => tlist1(d0)
+| D3Pfree(d0) => tlist1(d0)
+| D3Psapp(s0, s1) => tlist2(s0, s1)
 )
 
 
@@ -204,7 +210,8 @@ case+ x0 of
 | D3Cstatic(tok, d3c) => tlist2(tok, d3c)
 | D3Cextern(tok, d3c) => tlist2(tok, d3c)
 | D3Cinclude(tok, src, knd, fopt, body) =>
-  tlist5(tok, src, knd, fopt, body)
+  tlist5(tok, src, knd, fopt, "...")
+  (* tlist5(tok, src, knd, fopt, body) *)
 //where val _ = $showtype(body) end
 | D3Clocal(head, body) => tlist2(head, body)
 | D3Cvaldecl(knd, mopt, v3ds) => tlist3(knd, mopt, v3ds)

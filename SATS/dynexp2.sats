@@ -132,44 +132,38 @@ overload totype_tag with totype_tag_d2itm
 fun{} totype_tag_d2pitm : totype_type(d2pitm)
 overload totype_tag with totype_tag_d2pitm
 
+fun{} totype_d2pat_node : totype_type(d2pat_node)
 fun{} totype_tag_d2pat_node : totype_type(d2pat_node)
+overload totype with totype_d2pat_node
 overload totype_tag with totype_tag_d2pat_node
 
-fun{} totype_d2pat_node : totype_type(d2pat_node)
-overload totype with totype_d2pat_node
-
-fun{} totype_tag_f2arg_node : totype_type(f2arg_node)
-overload totype_tag with totype_tag_f2arg_node
-
 fun{} totype_f2arg_node : totype_type(f2arg_node)
+fun{} totype_tag_f2arg_node : totype_type(f2arg_node)
 overload totype with totype_f2arg_node
+overload totype_tag with totype_tag_f2arg_node
 
 fun{} totype_tag_ti2arg : totype_type(ti2arg)
 overload totype_tag with totype_tag_ti2arg
 
+fun{} totype_d2gua_node : totype_type(d2gua_node)
 fun{} totype_tag_d2gua_node : totype_type(d2gua_node)
+overload totype with totype_d2gua_node
 overload totype_tag with totype_tag_d2gua_node
 
-fun{} totype_d2gua_node : totype_type(d2gua_node)
-overload totype with totype_d2gua_node
-
+fun{} totype_d2clau_node : totype_type(d2clau_node)
 fun{} totype_tag_d2clau_node : totype_type(d2clau_node)
+overload totype with totype_d2clau_node
 overload totype_tag with totype_tag_d2clau_node
 
-fun{} totype_d2clau_node : totype_type(d2clau_node)
-overload totype with totype_d2clau_node
-
+fun{} totype_d2gpat_node : totype_type(d2gpat_node)
 fun{} totype_tag_d2gpat_node : totype_type(d2gpat_node)
+overload totype with totype_d2gpat_node
 overload totype_tag with totype_tag_d2gpat_node
 
-fun{} totype_d2gpat_node : totype_type(d2gpat_node)
-overload totype with totype_d2gpat_node
-
-fun{} totype_tag_d2exp_node : totype_type(d2exp_node)
-overload totype_tag with totype_tag_d2exp_node
-
 fun{} totype_d2exp_node : totype_type(d2exp_node)
+fun{} totype_tag_d2exp_node : totype_type(d2exp_node)
 overload totype with totype_d2exp_node
+overload totype_tag with totype_tag_d2exp_node
 
 fun{} totype_tag_v2aldecl : totype_type(v2aldecl)
 overload totype_tag with totype_tag_v2aldecl
@@ -180,11 +174,10 @@ overload totype_tag with totype_tag_v2ardecl
 fun{} totype_tag_f2undecl : totype_type(f2undecl)
 overload totype_tag with totype_tag_f2undecl
 
-fun{} totype_tag_d2ecl_node : totype_type(d2ecl_node)
-overload totype_tag with totype_tag_d2ecl_node
-
 fun{} totype_d2ecl_node : totype_type(d2ecl_node)
+fun{} totype_tag_d2ecl_node : totype_type(d2ecl_node)
 overload totype with totype_d2ecl_node
+overload totype_tag with totype_tag_d2ecl_node
 
 fun{} totype_tag_impls2cst : totype_type(impls2cst)
 overload totype_tag with totype_tag_impls2cst
@@ -320,44 +313,38 @@ overload argsof_tag with argsof_tag_d2itm
 fun{} argsof_tag_d2pitm : argsof_type(d2pitm)
 overload argsof_tag with argsof_tag_d2pitm
 
+fun{} argsof_d2pat_node : argsof_type(d2pat_node)
 fun{} argsof_tag_d2pat_node : argsof_type(d2pat_node)
+overload argsof with argsof_d2pat_node
 overload argsof_tag with argsof_tag_d2pat_node
 
-fun{} argsof_d2pat_node : argsof_type(d2pat_node)
-overload argsof with argsof_d2pat_node
-
-fun{} argsof_tag_f2arg_node : argsof_type(f2arg_node)
-overload argsof_tag with argsof_tag_f2arg_node
-
 fun{} argsof_f2arg_node : argsof_type(f2arg_node)
+fun{} argsof_tag_f2arg_node : argsof_type(f2arg_node)
 overload argsof with argsof_f2arg_node
+overload argsof_tag with argsof_tag_f2arg_node
 
 fun{} argsof_tag_ti2arg : argsof_type(ti2arg)
 overload argsof_tag with argsof_tag_ti2arg
 
+fun{} argsof_d2gua_node : argsof_type(d2gua_node)
 fun{} argsof_tag_d2gua_node : argsof_type(d2gua_node)
+overload argsof with argsof_d2gua_node
 overload argsof_tag with argsof_tag_d2gua_node
 
-fun{} argsof_d2gua_node : argsof_type(d2gua_node)
-overload argsof with argsof_d2gua_node
-
+fun{} argsof_d2clau_node : argsof_type(d2clau_node)
 fun{} argsof_tag_d2clau_node : argsof_type(d2clau_node)
+overload argsof with argsof_d2clau_node
 overload argsof_tag with argsof_tag_d2clau_node
 
-fun{} argsof_d2clau_node : argsof_type(d2clau_node)
-overload argsof with argsof_d2clau_node
-
+fun{} argsof_d2gpat_node : argsof_type(d2gpat_node)
 fun{} argsof_tag_d2gpat_node : argsof_type(d2gpat_node)
+overload argsof with argsof_d2gpat_node
 overload argsof_tag with argsof_tag_d2gpat_node
 
-fun{} argsof_d2gpat_node : argsof_type(d2gpat_node)
-overload argsof with argsof_d2gpat_node
-
-fun{} argsof_tag_d2exp_node : argsof_type(d2exp_node)
-overload argsof_tag with argsof_tag_d2exp_node
-
 fun{} argsof_d2exp_node : argsof_type(d2exp_node)
+fun{} argsof_tag_d2exp_node : argsof_type(d2exp_node)
 overload argsof with argsof_d2exp_node
+overload argsof_tag with argsof_tag_d2exp_node
 
 fun{} argsof_tag_v2aldecl : argsof_type(v2aldecl)
 overload argsof_tag with argsof_tag_v2aldecl
@@ -368,11 +355,10 @@ overload argsof_tag with argsof_tag_v2ardecl
 fun{} argsof_tag_f2undecl : argsof_type(f2undecl)
 overload argsof_tag with argsof_tag_f2undecl
 
-fun{} argsof_tag_d2ecl_node : argsof_type(d2ecl_node)
-overload argsof_tag with argsof_tag_d2ecl_node
-
 fun{} argsof_d2ecl_node : argsof_type(d2ecl_node)
+fun{} argsof_tag_d2ecl_node : argsof_type(d2ecl_node)
 overload argsof with argsof_d2ecl_node
+overload argsof_tag with argsof_tag_d2ecl_node
 
 fun{} argsof_tag_impls2cst : argsof_type(impls2cst)
 overload argsof_tag with argsof_tag_impls2cst

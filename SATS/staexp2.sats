@@ -73,11 +73,10 @@ overload totype_tag with totype_tag_tyrec
 fun{} totype_tag_s2txt : totype_type(s2txt)
 overload totype_tag with totype_tag_s2txt
 
-fun{} totype_tag_s2exp_node : totype_type(s2exp_node)
-overload totype_tag with totype_tag_s2exp_node
-
 fun{} totype_s2exp_node : totype_type(s2exp_node)
+fun{} totype_tag_s2exp_node : totype_type(s2exp_node)
 overload totype with totype_s2exp_node
+overload totype_tag with totype_tag_s2exp_node
 
 fun{} totype_tag_s2hnf : totype_type(s2hnf)
 overload totype_tag with totype_tag_s2hnf
@@ -184,11 +183,10 @@ overload argsof_tag with argsof_tag_tyrec
 fun{} argsof_tag_s2txt : argsof_type(s2txt)
 overload argsof_tag with argsof_tag_s2txt
 
-fun{} argsof_tag_s2exp_node : argsof_type(s2exp_node)
-overload argsof_tag with argsof_tag_s2exp_node
-
 fun{} argsof_s2exp_node : argsof_type(s2exp_node)
+fun{} argsof_tag_s2exp_node : argsof_type(s2exp_node)
 overload argsof with argsof_s2exp_node
+overload argsof_tag with argsof_tag_s2exp_node
 
 fun{} argsof_tag_s2hnf : argsof_type(s2hnf)
 overload argsof_tag with argsof_tag_s2hnf

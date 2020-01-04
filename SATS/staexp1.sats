@@ -91,83 +91,70 @@ overload totype with totype_d1atypelst
 
 //
 
+fun{} totype_g1exp_node : totype_type(g1exp_node)
 fun{} totype_tag_g1exp_node : totype_type(g1exp_node)
+overload totype with totype_g1exp_node
 overload totype_tag with totype_tag_g1exp_node
 
-fun{} totype_g1exp_node : totype_type(g1exp_node)
-overload totype with totype_g1exp_node
-
+fun{} totype_g1marg_node : totype_type(g1marg_node)
 fun{} totype_tag_g1marg_node : totype_type(g1marg_node)
+overload totype with totype_g1marg_node
 overload totype_tag with totype_tag_g1marg_node
 
-fun{} totype_g1marg_node : totype_type(g1marg_node)
-overload totype with totype_g1marg_node
-
+fun{} totype_sort1_node : totype_type(sort1_node)
 fun{} totype_tag_sort1_node : totype_type(sort1_node)
+overload totype with totype_sort1_node
 overload totype_tag with totype_tag_sort1_node
 
-fun{} totype_sort1_node : totype_type(sort1_node)
-overload totype with totype_sort1_node
-
+fun{} totype_s1rtcon_node : totype_type(s1rtcon_node)
 fun{} totype_tag_s1rtcon_node : totype_type(s1rtcon_node)
+overload totype with totype_s1rtcon_node
 overload totype_tag with totype_tag_s1rtcon_node
 
-fun{} totype_s1rtcon_node : totype_type(s1rtcon_node)
-overload totype with totype_s1rtcon_node
-
+fun{} totype_d1tsort_node : totype_type(d1tsort_node)
 fun{} totype_tag_d1tsort_node : totype_type(d1tsort_node)
+overload totype with totype_d1tsort_node
 overload totype_tag with totype_tag_d1tsort_node
 
-fun{} totype_d1tsort_node : totype_type(d1tsort_node)
-overload totype with totype_d1tsort_node
-
+fun{} totype_s1arg_node : totype_type(s1arg_node)
 fun{} totype_tag_s1arg_node : totype_type(s1arg_node)
+overload totype with totype_s1arg_node
 overload totype_tag with totype_tag_s1arg_node
 
-fun{} totype_s1arg_node : totype_type(s1arg_node)
-overload totype with totype_s1arg_node
-
+fun{} totype_s1rtdef_node : totype_type(s1rtdef_node)
 fun{} totype_tag_s1rtdef_node : totype_type(s1rtdef_node)
+overload totype with totype_s1rtdef_node
 overload totype_tag with totype_tag_s1rtdef_node
 
-fun{} totype_s1rtdef_node : totype_type(s1rtdef_node)
-overload totype with totype_s1rtdef_node
-
+fun{} totype_s1marg_node : totype_type(s1marg_node)
 fun{} totype_tag_s1marg_node : totype_type(s1marg_node)
+overload totype with totype_s1marg_node
 overload totype_tag with totype_tag_s1marg_node
 
-fun{} totype_s1marg_node : totype_type(s1marg_node)
-overload totype with totype_s1marg_node
-
+fun{} totype_t1arg_node : totype_type(t1arg_node)
 fun{} totype_tag_t1arg_node : totype_type(t1arg_node)
+overload totype with totype_t1arg_node
 overload totype_tag with totype_tag_t1arg_node
 
-fun{} totype_t1arg_node : totype_type(t1arg_node)
-overload totype with totype_t1arg_node
-
+fun{} totype_t1marg_node : totype_type(t1marg_node)
 fun{} totype_tag_t1marg_node : totype_type(t1marg_node)
+overload totype with totype_t1marg_node
 overload totype_tag with totype_tag_t1marg_node
 
-fun{} totype_t1marg_node : totype_type(t1marg_node)
-overload totype with totype_t1marg_node
-
+fun{} totype_s1qua_node : totype_type(s1qua_node)
 fun{} totype_tag_s1qua_node : totype_type(s1qua_node)
+overload totype with totype_s1qua_node
 overload totype_tag with totype_tag_s1qua_node
 
-fun{} totype_s1qua_node : totype_type(s1qua_node)
-overload totype with totype_s1qua_node
-
+fun{} totype_s1uni_node : totype_type(s1uni_node)
 fun{} totype_tag_s1uni_node : totype_type(s1uni_node)
+overload totype with totype_s1uni_node
 overload totype_tag with totype_tag_s1uni_node
 
-fun{} totype_s1uni_node : totype_type(s1uni_node)
-overload totype with totype_s1uni_node
-
-fun{} totype_tag_s1exp_node : totype_type(s1exp_node)
-overload totype_tag with totype_tag_s1exp_node
-
 fun{} totype_s1exp_node : totype_type(s1exp_node)
+fun{} totype_tag_s1exp_node : totype_type(s1exp_node)
 overload totype with totype_s1exp_node
+overload totype_tag with totype_tag_s1exp_node
 
 fun{} totype_tag_labs1explst : totype_type(labs1explst)
 overload totype_tag with totype_tag_labs1explst
@@ -175,17 +162,15 @@ overload totype_tag with totype_tag_labs1explst
 fun{} totype_tag_effs1expopt : totype_type(effs1expopt)
 overload totype_tag with totype_tag_effs1expopt
 
+fun{} totype_d1atcon_node : totype_type(d1atcon_node)
 fun{} totype_tag_d1atcon_node : totype_type(d1atcon_node)
+overload totype with totype_d1atcon_node
 overload totype_tag with totype_tag_d1atcon_node
 
-fun{} totype_d1atcon_node : totype_type(d1atcon_node)
-overload totype with totype_d1atcon_node
-
-fun{} totype_tag_d1atype_node : totype_type(d1atype_node)
-overload totype_tag with totype_tag_d1atype_node
-
 fun{} totype_d1atype_node : totype_type(d1atype_node)
+fun{} totype_tag_d1atype_node : totype_type(d1atype_node)
 overload totype with totype_d1atype_node
+overload totype_tag with totype_tag_d1atype_node
 
 
 //
@@ -278,83 +263,70 @@ overload argsof with argsof_d1atypelst
 
 //
 
+fun{} argsof_g1exp_node : argsof_type(g1exp_node)
 fun{} argsof_tag_g1exp_node : argsof_type(g1exp_node)
+overload argsof with argsof_g1exp_node
 overload argsof_tag with argsof_tag_g1exp_node
 
-fun{} argsof_g1exp_node : argsof_type(g1exp_node)
-overload argsof with argsof_g1exp_node
-
+fun{} argsof_g1marg_node : argsof_type(g1marg_node)
 fun{} argsof_tag_g1marg_node : argsof_type(g1marg_node)
+overload argsof with argsof_g1marg_node
 overload argsof_tag with argsof_tag_g1marg_node
 
-fun{} argsof_g1marg_node : argsof_type(g1marg_node)
-overload argsof with argsof_g1marg_node
-
+fun{} argsof_sort1_node : argsof_type(sort1_node)
 fun{} argsof_tag_sort1_node : argsof_type(sort1_node)
+overload argsof with argsof_sort1_node
 overload argsof_tag with argsof_tag_sort1_node
 
-fun{} argsof_sort1_node : argsof_type(sort1_node)
-overload argsof with argsof_sort1_node
-
+fun{} argsof_s1rtcon_node : argsof_type(s1rtcon_node)
 fun{} argsof_tag_s1rtcon_node : argsof_type(s1rtcon_node)
+overload argsof with argsof_s1rtcon_node
 overload argsof_tag with argsof_tag_s1rtcon_node
 
-fun{} argsof_s1rtcon_node : argsof_type(s1rtcon_node)
-overload argsof with argsof_s1rtcon_node
-
+fun{} argsof_d1tsort_node : argsof_type(d1tsort_node)
 fun{} argsof_tag_d1tsort_node : argsof_type(d1tsort_node)
+overload argsof with argsof_d1tsort_node
 overload argsof_tag with argsof_tag_d1tsort_node
 
-fun{} argsof_d1tsort_node : argsof_type(d1tsort_node)
-overload argsof with argsof_d1tsort_node
-
+fun{} argsof_s1arg_node : argsof_type(s1arg_node)
 fun{} argsof_tag_s1arg_node : argsof_type(s1arg_node)
+overload argsof with argsof_s1arg_node
 overload argsof_tag with argsof_tag_s1arg_node
 
-fun{} argsof_s1arg_node : argsof_type(s1arg_node)
-overload argsof with argsof_s1arg_node
-
+fun{} argsof_s1rtdef_node : argsof_type(s1rtdef_node)
 fun{} argsof_tag_s1rtdef_node : argsof_type(s1rtdef_node)
+overload argsof with argsof_s1rtdef_node
 overload argsof_tag with argsof_tag_s1rtdef_node
 
-fun{} argsof_s1rtdef_node : argsof_type(s1rtdef_node)
-overload argsof with argsof_s1rtdef_node
-
+fun{} argsof_s1marg_node : argsof_type(s1marg_node)
 fun{} argsof_tag_s1marg_node : argsof_type(s1marg_node)
+overload argsof with argsof_s1marg_node
 overload argsof_tag with argsof_tag_s1marg_node
 
-fun{} argsof_s1marg_node : argsof_type(s1marg_node)
-overload argsof with argsof_s1marg_node
-
+fun{} argsof_t1arg_node : argsof_type(t1arg_node)
 fun{} argsof_tag_t1arg_node : argsof_type(t1arg_node)
+overload argsof with argsof_t1arg_node
 overload argsof_tag with argsof_tag_t1arg_node
 
-fun{} argsof_t1arg_node : argsof_type(t1arg_node)
-overload argsof with argsof_t1arg_node
-
+fun{} argsof_t1marg_node : argsof_type(t1marg_node)
 fun{} argsof_tag_t1marg_node : argsof_type(t1marg_node)
+overload argsof with argsof_t1marg_node
 overload argsof_tag with argsof_tag_t1marg_node
 
-fun{} argsof_t1marg_node : argsof_type(t1marg_node)
-overload argsof with argsof_t1marg_node
-
+fun{} argsof_s1qua_node : argsof_type(s1qua_node)
 fun{} argsof_tag_s1qua_node : argsof_type(s1qua_node)
+overload argsof with argsof_s1qua_node
 overload argsof_tag with argsof_tag_s1qua_node
 
-fun{} argsof_s1qua_node : argsof_type(s1qua_node)
-overload argsof with argsof_s1qua_node
-
+fun{} argsof_s1uni_node : argsof_type(s1uni_node)
 fun{} argsof_tag_s1uni_node : argsof_type(s1uni_node)
+overload argsof with argsof_s1uni_node
 overload argsof_tag with argsof_tag_s1uni_node
 
-fun{} argsof_s1uni_node : argsof_type(s1uni_node)
-overload argsof with argsof_s1uni_node
-
-fun{} argsof_tag_s1exp_node : argsof_type(s1exp_node)
-overload argsof_tag with argsof_tag_s1exp_node
-
 fun{} argsof_s1exp_node : argsof_type(s1exp_node)
+fun{} argsof_tag_s1exp_node : argsof_type(s1exp_node)
 overload argsof with argsof_s1exp_node
+overload argsof_tag with argsof_tag_s1exp_node
 
 fun{} argsof_tag_labs1explst : argsof_type(labs1explst)
 overload argsof_tag with argsof_tag_labs1explst
@@ -362,14 +334,12 @@ overload argsof_tag with argsof_tag_labs1explst
 fun{} argsof_tag_effs1expopt : argsof_type(effs1expopt)
 overload argsof_tag with argsof_tag_effs1expopt
 
+fun{} argsof_d1atcon_node : argsof_type(d1atcon_node)
 fun{} argsof_tag_d1atcon_node : argsof_type(d1atcon_node)
+overload argsof with argsof_d1atcon_node
 overload argsof_tag with argsof_tag_d1atcon_node
 
-fun{} argsof_d1atcon_node : argsof_type(d1atcon_node)
-overload argsof with argsof_d1atcon_node
-
-fun{} argsof_tag_d1atype_node : argsof_type(d1atype_node)
-overload argsof_tag with argsof_tag_d1atype_node
-
 fun{} argsof_d1atype_node : argsof_type(d1atype_node)
+fun{} argsof_tag_d1atype_node : argsof_type(d1atype_node)
 overload argsof with argsof_d1atype_node
+overload argsof_tag with argsof_tag_d1atype_node

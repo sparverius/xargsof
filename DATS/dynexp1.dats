@@ -17,13 +17,6 @@
 #include "./mac.dats"
 //
 
-(*
-#define INCLUDE_LOCATION
-*)
-
-(*
-#ifndef INCLUDE_LOCATION
-*)
 implement{} argsof_q1arg(x0) = tlist1(x0.node())
 implement{} argsof_a1typ(x0) = tlist1(x0.node())
 implement{} argsof_d1arg(x0) = tlist1(x0.node())
@@ -42,7 +35,7 @@ implement{} argsof_v1ardecl(x0) = tlist1(x0)
 implement{} argsof_f1undecl(x0) = tlist1(x0)
 implement{} argsof_d1cstdecl(x0) = tlist1(x0)
 (*
-#else
+// to include location information
 implement{} argsof_q1arg(x0) = tlist2(x0.loc(), x0.node())
 implement{} argsof_a1typ(x0) = tlist2(x0.loc(), x0.node())
 implement{} argsof_d1arg(x0) = tlist2(x0.loc(), x0.node())
@@ -60,7 +53,6 @@ implement{} argsof_v1aldecl(x0) = tlist2(x0.loc(), x0)
 implement{} argsof_v1ardecl(x0) = tlist2(x0.loc(), x0)
 implement{} argsof_f1undecl(x0) = tlist2(x0.loc(), x0)
 implement{} argsof_d1cstdecl(x0) = tlist2(x0.loc(), x0)
-#endif
 *)
 
 
@@ -213,10 +205,11 @@ case+ x0 of
 | D1Cdefine(tok, sym, arg, def) => tlist4(tok, sym, arg, def)
 | D1Cmacdef(tok, sym, arg, def) => tlist4(tok, sym, arg, def)
 | D1Cinclude(tok, src, knd, opt, body) =>
-  tlist5(tok, src, knd, opt, body)
-//where val _ = $showtype body end
+  tlist5(tok, src, knd, opt, "...")
+  (* tlist5(tok, src, knd, opt, body) *)
 | D1Cstaload(tok, src, knd, opt, flag, body) =>
-  tlist6(tok, src, knd, opt, flag, body)
+  tlist6(tok, src, knd, opt, flag, "...")
+  (* tlist6(tok, src, knd, opt, flag, body) *)
 | D1Cabssort(tok, tid) => tlist2(tok, tid)
 | D1Cstacst0(tok, sid, tmas, s0t) => tlist4(tok, sid, tmas, s0t)
 | D1Csortdef(knd, tok, def) => tlist3(knd, tok, def)

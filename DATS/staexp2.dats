@@ -22,33 +22,28 @@
 #include "./mac.dats"
 //
 
-(*
-#define INCLUDE_LOCATION
-*)
-
-(* #ifndef INCLUDE_LOCATION *)
 implement{} argsof_s2cst(x0) =
-  tlist2(x0.stamp(), x0.sym())
-  (* tlist3(x0.stamp(), x0.sym(), x0.sort()) *)
-  //tlist5(x0.stamp(), x0.sym(), x0.sort(), x0.sexp(), x0.type())
+  (* tlist2(x0.stamp(), x0.sym()) *)
+  tlist3(x0.stamp(), x0.sym(), x0.sort())
+  (* tlist5(x0.stamp(), x0.sym(), x0.sort(), x0.sexp(), x0.type()) *)
 implement{} argsof_s2xtv(x0) =
-  tlist2(x0.stamp(), x0.sort())
-  (* tlist3(x0.stamp(), x0.sort(), x0.sexp()) *)
+  (* tlist2(x0.stamp(), x0.sort()) *)
+  tlist3(x0.stamp(), x0.sort(), x0.sexp())
+
 (*
-#else
+// for including location information
 implement{} argsof_s2cst(x0) =
   tlist4(x0.loc(), x0.stamp(), x0.sym(), x0.sort())
   //tlist6(x0.loc(), x0.stamp(), x0.sym(), x0.sort(), x0.sexp(), x0.type())
 implement{} argsof_s2xtv(x0) =
   tlist4(x0.loc(), x0.stamp(), x0.sort(), x0.sexp())
-#endif
 *)
 
 
 
 implement{} argsof_s2var(x0) =
-  tlist2(x0.stamp(), x0.sym())
-  (* tlist3(x0.stamp(), x0.sym(), x0.sort()) *)
+  (* tlist2(x0.stamp(), x0.sym()) *)
+  tlist3(x0.stamp(), x0.sym(), x0.sort())
 implement{} argsof_sort2(s2t0) = tlist1(s2t0)
 implement{} argsof_t2bas(s2tb) = tlist1(s2tb)
 implement{} argsof_t2abs(x0) = tlist2(x0.stamp(), x0.sym())
@@ -99,7 +94,8 @@ case+ s2tb of
 | T2BASpre(sym) => tlist1(sym)
 | T2BASabs(abs) => tlist1(abs)
 | T2BASdat(dat) => tlist1(dat)
-| T2BASimp(knd, sym) => tlist2(knd, sym)
+| T2BASimp(knd, sym) => tlist1(sym)
+  (* tlist2(knd, sym) *)
 )
 
 

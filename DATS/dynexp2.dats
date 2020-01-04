@@ -36,17 +36,16 @@ implement{} argsof_d2gua(x0) = tlist1(x0.node())
 implement{} argsof_d2gpat(x0) = tlist1(x0.node())
 
 implement{} argsof_d2con(x0) =
-tlist2(x0.sym(), x0.type())
-(* tlist3(x0.sym(), x0.sexp(), x0.type()) *)
+(* tlist2(x0.sym(), x0.type()) *)
+tlist3(x0.sym(), x0.sexp(), x0.type())
 implement{} argsof_d2var(x0) =
-tlist2(x0.sym(), x0.type())
-(* tlist3(x0.sym(), x0.type(), x0.tqas()) *)
+(* tlist2(x0.sym(), x0.type()) *)
+tlist3(x0.sym(), x0.type(), x0.tqas())
 (* tlist4(x0.sym(), x0.sexp(), x0.type(), x0.tqas()) *)
 implement{} argsof_d2cst(x0) =
-tlist2(x0.sym(), x0.type())
-(*
-tlist5(x0.sym(), x0.sexp(), x0.type(), x0.tqas(), d2cst_get_s2vs(x0))
-*)
+(* tlist2(x0.sym(), x0.type()) *)
+tlist4(x0.sym(), x0.sexp(), x0.type(), x0.tqas())
+(* tlist5(x0.sym(), x0.sexp(), x0.type(), x0.tqas(), d2cst_get_s2vs(x0)) *)
 
 implement{} argsof_sq2arg(x0) = tlist1(x0.s2vs())
 implement{} argsof_tq2arg(x0) = tlist1(x0.s2vs())
@@ -207,15 +206,15 @@ case+ x0 of
 implement{}
 argsof_tag_d2ecl_node(x0) =
 (
-case- x0 of
+case+ x0 of
 | D2Cstatic(tok, d2c) => tlist2(tok, d2c)
 | D2Cextern(tok, d2c) => tlist2(tok, d2c)
 | D2Cinclude(tok, src, knd, fopt, body) =>
-  tlist5(tok, src, knd, fopt, body)
-//where val _ = $showtype body end
+  (* tlist5(tok, src, knd, fopt, body) *)
+  tlist5(tok, src, knd, fopt, "...")
 | D2Cstaload(tok, src, knd, fopt, flag, body) =>
-  tlist6(tok, src, knd, fopt, flag, body)
-//where val _ = $showtype body end
+  (* tlist6(tok, src, knd, fopt, flag, body) *)
+  tlist6(tok, src, knd, fopt, flag, "...")
 | D2Clocal(head0, body) => tlist2(head0, body)
 | D2Cabssort(d1c) => tlist1(d1c)
 | D2Cstacst0(s2c, s2t) => tlist2(s2c, s2t)
