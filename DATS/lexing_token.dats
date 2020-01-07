@@ -210,11 +210,11 @@ end
 where val knd =
 (
 case+ knd of
-| IMPprf() => "IMPprf"
-| IMPval() => "IMPval"
-| IMPfun() => "IMPfun"
-| IMPtmp() => "IMPtmp"
-| IMPgen() => "IMPgen"
+| IMPprf() => "implprf"
+| IMPval() => "implval"
+| IMPfun() => "implfun"
+| IMPtmp() => "impltmp"
+| IMPgen() => "implgen"
 ) : string
 end
 // (*
