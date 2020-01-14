@@ -197,7 +197,7 @@ where val fnk =
 case+ fnk of
 | FNKfn0() => "fn0"
 | FNKfnx() => "fnx"
-| FNKfn1() => "fn1"
+| FNKfn1() => "fun" // fn1
 | FNKfun() => "fun"
 | FNKprfn0() => "prfn0"
 | FNKprfn1() => "prfn1"
@@ -214,7 +214,7 @@ case+ knd of
 | IMPval() => "implval"
 | IMPfun() => "implfun"
 | IMPtmp() => "impltmp"
-| IMPgen() => "implgen"
+| IMPgen() => "implement" //"implgen"
 ) : string
 end
 // (*
