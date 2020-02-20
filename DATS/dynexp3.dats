@@ -213,6 +213,8 @@ case+ x0 of
   tlist5(tok, src, knd, fopt, "...")
   (* tlist5(tok, src, knd, fopt, body) *)
 //where val _ = $showtype(body) end
+| D3Cstaload(tok, src, knd, fopt, flag, body) =>
+  tlist6(tok, src, knd, fopt, flag, "...")
 | D3Clocal(head, body) => tlist2(head, body)
 | D3Cvaldecl(knd, mopt, v3ds) => tlist3(knd, mopt, v3ds)
 | D3Cvardecl(knd, mopt, v3ds) => tlist3(knd, mopt, v3ds)
