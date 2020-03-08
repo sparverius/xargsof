@@ -188,12 +188,15 @@ case+ x0 of
 | D2Ecase(knd, d2e1, d2cls) => tlist3(knd, d2e1, d2cls)
 | D2Elam(knd, f2as, tres, arrw, body) => tlist5(knd, f2as, tres, arrw, body)
 | D2Efix(knd, fid, f2as, tres, arrw, body) => tlist6(knd, fid, f2as, tres, arrw, body)
+| D2Etry(token(*TRY*), d2exp(*val*), d2claulst) =>
+  tlist3(token, d2exp, d2claulst)
 (*
 | D2Eflat(d2e1) => tlist1(d2e1)
 *)
 | D2Eaddr(d2e1) =>  tlist1(d2e1)
 | D2Eeval(d2e1) => tlist1(d2e1)
 | D2Efold(d2e1) => tlist1(d2e1)
+| D2Eraise(d2exp)(*lin-exn*) => tlist1(d2exp)
 //
 | D2Elazy(d2e1) => tlist1(d2e1)
 | D2Ellazy(d2e1, opt2) => tlist2(d2e1, opt2)
@@ -230,8 +233,9 @@ case+ x0 of
   tlist9(knd, mopt, sqas, tqas, dqid, tias, f2as, res0, d2e1)
 | D2Cimpdecl2(knd, mopt, sqas, tqas, dqid, tias, f2as, res0, d2e1) =>
   tlist9(knd, mopt, sqas, tqas, dqid, tias, f2as, res0, d2e1)
-| D2Cdatasort(d1c) => tlist1(d1c)
-| D2Cdatatype(d1c) => tlist1(d1c)
+| D2Cdatasort(d1c, sort2lst) => tlist2(d1c, sort2lst)
+| D2Cexcptcon(d1ecl, d2conlst) => tlist2(d1ecl, d2conlst)
+| D2Cdatatype(d1c, s2cstlst) => tlist2(d1c, s2cstlst)
 | D2Cdynconst(knd, tqas, d2cs) => tlist3(knd, tqas, d2cs)
 | D2Cnone0() => tlist0()
 | D2Cnone1(d1csrc) => tlist1(d1csrc)

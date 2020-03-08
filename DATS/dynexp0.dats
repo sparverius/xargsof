@@ -286,6 +286,8 @@ case+ x0 of
   tlist6(tok0, arg1, res2, farrw, fbody, tend)
 | D0Efix(tok0, fid0, arg1, res2, farrw, fbody, tend) =>
   tlist7(tok0, fid0, arg1, res2, farrw, fbody, tend)
+| D0Etry(tok0, d0exp, tok1(*WITH*), topt(*BAR*), d0claulst, tok2(*END*)) =>
+  tlist6(tok0, d0exp, tok1, topt, d0claulst, tok2)
 | D0Eanno(d0e, ann) => tlist2(d0e, ann)
 | D0Equal(tok, d0e) => tlist2(tok, d0e)
 | D0Enone(tok) => tlist1(tok)
@@ -422,6 +424,7 @@ case+ x0 of
 | D0Csymload(tok, sym, twth, dqid, tint) =>
   tlist5(tok, sym, twth, dqid, tint)
 | D0Cdatasort(tok, d0cs) => tlist2(tok, d0cs)
+| D0Cexcptcon(tok(*EXCPTCON*), d0atclst) => tlist2(tok, d0atclst)
 | D0Cdatatype(tok, d0cs, wopt) => tlist3(tok, d0cs, wopt)
 | D0Cdynconst(tok, tqas, d0cs) => tlist3(tok, tqas, d0cs)
 | D0Clocal(tbeg, d0cs0, topt, d0cs1, tend) =>

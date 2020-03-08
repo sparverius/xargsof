@@ -186,6 +186,8 @@ case+ x0 of
 | D1Ecase(knd, d1e1, dcls) => tlist3(knd, d1e1, dcls)
 | D1Elam(knd, farg, tres, arrw, body) => tlist5(knd, farg, tres, arrw, body)
 | D1Efix(knd, fid, farg, tres, arrw, body) => tlist6(knd, fid, farg, tres, arrw, body)
+| D1Etry(token(*TRY*), d1exp(*value*), d1claulst(*clauses*)) =>
+  tlist3(token, d1exp, d1claulst)
 | D1Erecord(tok, ld1es) => tlist2(tok, ld1es)
 | D1Erecord(tok, ld1es1, ld1es2) => tlist3(tok, ld1es1, ld1es2)
 | D1Eanno(d1e1, s1e2) => tlist2(d1e1, s1e2)
@@ -198,8 +200,8 @@ implement{}
 argsof_tag_d1ecl_node(x0) =
 (
 case+ x0 of
-| D1Cnone() => tlist0()
-| D1Cnone(d0c) => tlist1(d0c)
+| D1Cnone0() => tlist0()
+| D1Cnone1(d0c) => tlist1(d0c)
 | D1Cstatic(knd, d1c) => tlist2(knd, d1c)
 | D1Cextern(knd, d1c) => tlist2(knd, d1c)
 | D1Cdefine(tok, sym, arg, def) => tlist4(tok, sym, arg, def)
@@ -223,6 +225,7 @@ case+ x0 of
   tlist10(tok, mopt, sqas, tqas, dqid, tias, f1as, res0, teq1, d1e2)
 | D1Csymload(knd, sym, dqid, tint) => tlist4(knd, sym, dqid, tint)
 | D1Cdatasort(knd, d1tsts) => tlist2(knd, d1tsts)
+| D1Cexcptcon(tok(*EXCPTCON*), d1atclst) => tlist2(tok, d1atclst)
 | D1Cdatatype(knd, d1typs, wopt) => tlist3(knd, d1typs, wopt)
 | D1Cdynconst(tok, tqas, d1cs) => tlist3(tok, tqas, d1cs)
 | D1Clocal(d1cs_head, d1cs_body) => tlist2(d1cs_head, d1cs_body)

@@ -40,7 +40,7 @@ case+ fnk of
 | FNKprfn1() => "prfn1"
 | FNKprfun() => "prfun"
 | FNKpraxi() => "praxi"
-| FNKcastfn() => "castfn"
+| FNKfcast() => "fcast"
 ): string
 end
 
