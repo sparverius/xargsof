@@ -228,3 +228,22 @@ fun{} argsof_d3ecl_node : argsof_type(d3ecl_node)
 fun{} argsof_tag_d3ecl_node : argsof_type(d3ecl_node)
 overload argsof with argsof_d3ecl_node
 overload argsof_tag with argsof_tag_d3ecl_node
+
+
+
+
+///
+fun{} totype_t3cst : totype_type(t3cst)
+fun{} totype_t3cstlst : totype_type(t3cstlst)
+overload totype with totype_t3cst
+overload totype with totype_t3cstlst
+
+
+fun{} argsof_t3cst : argsof_type(t3cst)
+fun{} argsof_t3cstlst : argsof_type(t3cstlst)
+overload argsof with argsof_t3cst
+overload argsof with argsof_t3cstlst
+
+fun{} argsof_tag_t3cst : argsof_type(t3cst)
+overload argsof_tag with argsof_tag_t3cst
+///

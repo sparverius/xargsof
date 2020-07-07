@@ -176,6 +176,7 @@ argsof_tag_g0exp_node(x0) =
 case+ x0 of
 | G0Eid(g0eid) => tlist1(g0eid)
 | G0Eint(t0int) => tlist1(t0int)
+| G0Estr(t0str) => tlist1(t0str)
 | G0Eapps(g0explst) => tlist1(g0explst)
 | G0Elist(token0, g0explst, token1) => tlist3(token0, g0explst, token1)
 | G0Enone(token) => tlist1(token)
@@ -224,7 +225,7 @@ implement{}
 argsof_tag_sort0_node(x0) =
 (
 case+ x0 of
-| S0Tid(tid) => tlist1(tid)
+| S0Tid0(tid) => tlist1(tid)
 | S0Tint(int) => tlist1(int)
 | S0Tapps(s0ts) => tlist1(s0ts)
 | S0Tlist(t0, s0ts, t1) => tlist3(t0, s0ts, t1)
@@ -282,6 +283,7 @@ implement{}
 argsof_tag_t0arg_node(x0) =
 (
 case+ x0 of
+| T0ARGnone(tnone) => tlist1(tnone)
 | T0ARGsome(tid, opt) => tlist2(tid, opt)
 // where val _ = $showtype(tid, opt) end
 )

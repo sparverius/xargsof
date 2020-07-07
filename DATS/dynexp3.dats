@@ -97,6 +97,8 @@ case+ x0 of
 | D3Pflat(d0) => tlist1(d0)
 | D3Pfree(d0) => tlist1(d0)
 | D3Psapp(s0, s1) => tlist2(s0, s1)
+//
+| D3Pbang(d0) => tlist1(d0)
 )
 
 
@@ -165,6 +167,13 @@ case+ x0 of
 | D3Enone2(d3esrc) => tlist1(d3esrc)
 //
 | D3Epcon(d3e1, lab2) => tlist2(d3e1, lab2)
+///
+| D3Evknd(t0, t1) => tlist2(t0, t1)
+| D3Efcon(t0) => tlist1(t0)
+| D3Etcon(t0, t1, t2) => tlist3(t0, t1, t2)
+| D3Etnfd(t0, t1) => tlist2(t0, t1)
+| D3Etrec(t0, t1) => tlist2(t0, t1)
+| D3Efree(t0) => tlist1(t0)
 )
 
 
@@ -229,6 +238,10 @@ case+ x0 of
   tlist10(knd, mopt, sqas, tqas, id2c, ti3a, ti2s, f3as, res0, d3e0)
 | D3Cnone0() => tlist0()
 | D3Cnone1(d3csrc) => tlist1(d3csrc)
+///
+| D3Cabstype(t0) => tlist1(t0)
+| D3Cabsopen(t0, t1) => tlist2(t0, t1)
+| D3Cabsimpl(t0, t1, t2) => tlist3(t0, t1, t2)
 )
 
 
@@ -263,3 +276,26 @@ argsof_tag_f3undecl(x0) = let
 in
   tlist6(rcd.nam, rcd.d2c, rcd.a2g, rcd.res, rcd.def, rcd.wtp)
 end
+
+
+implement{} argsof_t3cst(x0) = tlist1(x0)
+
+implement{} argsof_tag_t3cst(x0) =
+let
+val x0 = d3exp(x0)
+in
+//
+case- x0.node() of
+| D3Etcst(d2c1, ti3a, ti2s) =>  tlist3(d2c1, ti3a, ti2s)
+(*
+let
+val-
+TI3ARGsome(targ) = ti3a
+in
+fprint!(out, d2c1, "<", targ, ">")
+end
+*)
+//
+end (* end of [fprint_t3cst] *)
+
+implement{} argsof_t3cstlst(x0) = tlist1(x0)

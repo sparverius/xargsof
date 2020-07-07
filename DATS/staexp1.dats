@@ -93,6 +93,7 @@ argsof_tag_g1exp_node(x0) =
 case+ x0 of
 | G1Eid(tok_sym) => tlist1(tok_sym)
 | G1Eint(int) => tlist1(int)
+| G1Estr(tstr) => tlist1(tstr)
 | G1Eapp() => tlist0()
 | G1Eapp1(g1e0, g1e1) => tlist2(g1e0, g1e1)
 | G1Eapp2(g1e0, g1e1, g1e2) => tlist3(g1e0, g1e1, g1e2)
@@ -115,7 +116,7 @@ implement{}
 argsof_tag_sort1_node(x0) =
 (
 case+ x0 of
-| S1Tid(id) => tlist1(id)
+| S1Tid0(id) => tlist1(id)
 | S1Tint(int) => tlist1(int)
 | S1Tapp() => tlist0()
 (*

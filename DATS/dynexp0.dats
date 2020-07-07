@@ -429,6 +429,12 @@ case+ x0 of
 | D0Cdynconst(tok, tqas, d0cs) => tlist3(tok, tqas, d0cs)
 | D0Clocal(tbeg, d0cs0, topt, d0cs1, tend) =>
   tlist5(tbeg, d0cs0, topt, d0cs1, tend)
+//
+| D0Cabsopen (t0, t1) => tlist2(t0, t1)
+| D0Celse (t0) => tlist1(t0)
+| D0Cendif (t0) => tlist1(t0)
+| D0Cifdec (t0, t1, t2) => tlist3(t0, t1, t2)
+| D0Celsif (t0, t1, t2) => tlist3(t0, t1, t2)
 )
 
 

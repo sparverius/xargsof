@@ -145,6 +145,7 @@ case x0 of
 //
 | D2Pflat(d2p1) => tlist1(d2p1)
 | D2Pfree(d2p1) => tlist1(d2p1)
+| D2Pbang(d2p1) => tlist1(d2p1)
 )
 
 
@@ -203,6 +204,7 @@ case+ x0 of
 | D2Eanno(d2e1, s2e2) => tlist2(d2e1, s2e2)
 | D2Enone0() => tlist0()
 | D2Enone1(d1esrc) => tlist1(d1esrc)
+| D2Efree(d1esrc) => tlist1(d1esrc)
 )
 
 
@@ -239,6 +241,8 @@ case+ x0 of
 | D2Cdynconst(knd, tqas, d2cs) => tlist3(knd, tqas, d2cs)
 | D2Cnone0() => tlist0()
 | D2Cnone1(d1csrc) => tlist1(d1csrc)
+//
+| D2Cabsopen(d1c, t1) => tlist2(d1c, t1)
 )
 
 

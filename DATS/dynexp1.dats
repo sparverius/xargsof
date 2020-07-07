@@ -236,6 +236,11 @@ case+ x0 of
     extn!(out, "extn_d1ecl: D1C...: not-yet-implemented")
 *)
 //
+| D1Cabsopen (t0, t1) => tlist2(t0, t1)
+| D1Celse (t0) => tlist1(t0)
+| D1Cendif (t0) => tlist1(t0)
+| D1Cifdec (t0, t1, t2) => tlist3(t0, t1, t2)
+| D1Celsif (t0, t1, t2) => tlist3(t0, t1, t2)
 )
 
 

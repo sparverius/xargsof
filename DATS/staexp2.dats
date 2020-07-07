@@ -74,7 +74,7 @@ implement{}
 argsof_tag_sort2(s2t0) =
 (
 case+ s2t0 of
-| S2Tid(id) => tlist1(id)
+| S2Tid0(id) => tlist1(id)
 | S2Tint(i0) => tlist1(i0)
 | S2Tbas(s2tb) => tlist1(s2tb)
 | S2Ttup() => tlist0()
@@ -166,7 +166,8 @@ case+ s2e0 of
 | S2Etyrec(knd, npf, ls2es) => tlist3(knd, npf, ls2es)
 | S2Etyext(tnm1, s2es) => tlist2(tnm1, s2es)
 | S2Enone0() =>  tlist0()
-| S2Enone1(s1esrc) => tlist1(s1esrc)
+| S2Enone1(s1esrc, t1) => tlist2(s1esrc, t1)
+| S2Enone2(s1esrc, t1) => tlist2(s1esrc, t1)
 )
 
 
@@ -196,7 +197,7 @@ case+ x0 of
 | ABSTDF2none() => tlist0()
 | ABSTDF2some() => tlist0()
 | ABSTDF2lteq(s2e) => tlist1(s2e)
-| ABSTDF2eqeq(s2e) => tlist1(s2e)
+| ABSTDF2eqeq(s2e, t1) => tlist2(s2e, t1)
 )
 
 
