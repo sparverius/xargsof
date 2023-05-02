@@ -3,7 +3,7 @@
 #staload UN = "prelude/SATS/unsafe.sats"
 
 #include "./../HATS/libxatsopt.hats"
-#staload "{$x}/SATS/basics.sats"
+#staload "{$x}/SATS/xbasics.sats"
 
 
 #staload "./../SATS/argsof.sats"
@@ -46,14 +46,13 @@ implement{}
 argsof_tag_tnode(tnd) =
 (
 case+ tnd of
-(*
-| T_EOF() =>
-| T_ERR() =>
-| T_EOL() =>
-*)
+| T_EOF() => tlist1("T_EOF")
+| T_ERR() => tlist1("T_ERR")
+| T_EOL() => tlist1("T_EOL")
 | T_BLANK(x) => tlist1(x)
 | T_CLNLT(x) => tlist1(x)
 | T_DOTLT(x) => tlist1(x)
+| T_IDENT(x) => tlist1(x)
 | T_IDENT_alp(x) => tlist1(x)
 | T_IDENT_sym(x) => tlist1(x)
 | T_IDENT_srp(x) => tlist1(x)
@@ -62,9 +61,9 @@ case+ tnd of
 | T_INT1(rep) => tlist1(rep)
 | T_INT2(base, rep) => tlist2(base, rep)
 | T_INT3(base, rep, k0(*sfx*)) => tlist3(base, rep, k0)
-| T_FLOAT1(rep) => tlist1(rep)
-| T_FLOAT2(base, rep) => tlist1(rep)
-| T_FLOAT3(base, rep, k0(*sfx*)) => tlist3(base, rep, k0)
+| T_FLT1(rep) => tlist1(rep)
+| T_FLT2(base, rep) => tlist1(rep)
+| T_FLT3(base, rep, k0(*sfx*)) => tlist3(base, rep, k0)
 // (*
 // | T_CHAR(chr) =>
 // *)
@@ -114,26 +113,24 @@ case+ tnd of
 | T_RBRACK() => tlist1("]")
 // *)
 | T_EXISTS(knd) => tlist1(knd)
-| T_TUPLE(knd) => tlist1(knd)
-// (*
+| T_TRCD1(knd) => tlist1(knd)
 where val knd =
 (
 case- knd of
 | 0 => "@"
-| 1 => "$"
-| 2 => "$tup"
-| 3 => "$tup_t"
-| 4 => "$tup_vt"
+| 1 => "@tup"
+| 2 => "@tup_t"
+| 3 => "@tup_vt"
 ) : string
 end
-// *)
-| T_RECORD(knd) => tlist1(knd)
+| T_TRCD2(knd) => tlist1(knd)
 where val knd =
 (
 case- knd of
-| 2 => "$rec"
-| 3 => "$rec_t"
-| 4 => "$rec_vt"
+| 1 => "@{"
+| 2 => "@rec"
+| 3 => "@rec_t"
+| 4 => "@rec_vt"
 ) : string
 end
 // (*
@@ -160,15 +157,21 @@ end
 | T_CASE(k0) => tlist1(k0)
 // (*
 | T_SCASE() => tlist1("scase")
-| T_ENDIF() => tlist1("endif")
-| T_ENDSIF() => tlist1("endsif")
-| T_ENDCASE() => tlist1("endcase")
-| T_ENDSCASE() => tlist1("endscase")
+| T_ENDST() => tlist1("T_ENDST")
+| T_ENDIF0() => tlist1("endif")
+| T_ENDCAS() => tlist1("endcase")
+| T_ENDFIX() => tlist1("endfix")
+| T_ENDTRY() => tlist1("endtry")
+| T_STACST0() => tlist1("stacast0")
+| T_EXCPTCON() => tlist1("T_EXCPTCON")
+| T_DLR_EXTNAM() => tlist1("T_DLR_EXTNAM")
+| T_DLR_EXISTS() => tlist1("T_DLR_EXISTS")
 // *)
 | T_LAM(knd) => tlist1("lam") // tlist1(knd)
 
 | T_FIX(knd) => tlist1("fix") //tlist1(knd)
 // (*
+| T_TRY() => tlist1("try")
 | T_LET() => tlist1("let")
 | T_WHERE() => tlist1("where")
 | T_LOCAL() => tlist1("local")
@@ -177,6 +180,13 @@ end
 | T_ENDWHERE() => tlist1("endwhere")
 | T_ENDLOCAL() => tlist1("endlocal")
 // *)
+//
+| T_SRP_ELSE() => tlist1("#else")
+| T_SRP_THEN() => tlist1("#then")
+| T_SRP_IFDEC(x) => tlist1(x)
+| T_SRP_ELSIF(x) => tlist1(x)
+| T_SRP_ENDIF() => tlist1("#endif")
+//
 | T_VAL(vlk) => //tlist1(vlk)
   tlist1(vlk) where val vlk =
 (
@@ -197,7 +207,8 @@ where val fnk =
 case+ fnk of
 | FNKfn0() => "fn0"
 | FNKfnx() => "fnx"
-| FNKfn1() => "fun" // fn1
+| FNKfn1() => "fn1"
+| FNKfn2() => "fn2"
 | FNKfun() => "fun"
 | FNKprfn0() => "prfn0"
 | FNKprfn1() => "prfn1"
@@ -286,7 +297,7 @@ case- knd of
 ) : string
 end
 // (*
-| T_SRP_STACST() => tlist1("#stacst")
+//| T_SRP_STACST() => tlist1("#stacst")
 | T_SRP_STATIC() => tlist1("#static")
 | T_SRP_EXTERN() => tlist1("#extern")
 | T_SRP_DEFINE() => tlist1("#define")
@@ -296,5 +307,5 @@ end
 | T_SRP_DYNLOAD() => tlist1("#dynload")
 | T_SRP_SYMLOAD() => tlist1("#symload")
 // *)
-| _ => tlist0()
+//| _ => tlist0()
 )

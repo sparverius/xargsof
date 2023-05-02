@@ -63,8 +63,6 @@ overload totype with totype_d1exp
 overload totype with totype_d1explst
 overload totype with totype_d1expopt
 
-fun{} totype_f1unarrow : totype_type(f1unarrow)
-overload totype with totype_f1unarrow
 
 fun{} totype_teqd1expopt : totype_type(teqd1expopt)
 overload totype with totype_teqd1expopt
@@ -72,20 +70,20 @@ overload totype with totype_teqd1expopt
 fun{} totype_wths1expopt : totype_type(wths1expopt)
 overload totype with totype_wths1expopt
 
-fun{} totype_v1aldecl : totype_type(v1aldecl)
-fun{} totype_v1aldeclist : totype_type(v1aldeclist)
-overload totype with totype_v1aldecl
-overload totype with totype_v1aldeclist
+fun{} totype_d1valdecl : totype_type(d1valdecl)
+fun{} totype_d1valdeclist : totype_type(d1valdeclist)
+overload totype with totype_d1valdecl
+overload totype with totype_d1valdeclist
 
-fun{} totype_v1ardecl : totype_type(v1ardecl)
-fun{} totype_v1ardeclist : totype_type(v1ardeclist)
-overload totype with totype_v1ardecl
-overload totype with totype_v1ardeclist
+fun{} totype_d1vardecl : totype_type(d1vardecl)
+fun{} totype_d1vardeclist : totype_type(d1vardeclist)
+overload totype with totype_d1vardecl
+overload totype with totype_d1vardeclist
 
-fun{} totype_f1undecl : totype_type(f1undecl)
-fun{} totype_f1undeclist : totype_type(f1undeclist)
-overload totype with totype_f1undecl
-overload totype with totype_f1undeclist
+fun{} totype_d1fundecl : totype_type(d1fundecl)
+fun{} totype_d1fundeclist : totype_type(d1fundeclist)
+overload totype with totype_d1fundecl
+overload totype with totype_d1fundeclist
 
 fun{} totype_d1cstdecl : totype_type(d1cstdecl)
 fun{} totype_d1cstdeclist : totype_type(d1cstdeclist)
@@ -176,8 +174,6 @@ fun{} totype_tag_d1exp_node : totype_type(d1exp_node)
 overload totype with totype_d1exp_node
 overload totype_tag with totype_tag_d1exp_node
 
-fun{} totype_tag_f1unarrow : totype_type(f1unarrow)
-overload totype_tag with totype_tag_f1unarrow
 
 fun{} totype_tag_teqd1expopt : totype_type(teqd1expopt)
 overload totype_tag with totype_tag_teqd1expopt
@@ -185,14 +181,14 @@ overload totype_tag with totype_tag_teqd1expopt
 fun{} totype_tag_wths1expopt : totype_type(wths1expopt)
 overload totype_tag with totype_tag_wths1expopt
 
-fun{} totype_tag_v1aldecl : totype_type(v1aldecl)
-overload totype_tag with totype_tag_v1aldecl
+fun{} totype_tag_d1valdecl : totype_type(d1valdecl)
+overload totype_tag with totype_tag_d1valdecl
 
-fun{} totype_tag_v1ardecl : totype_type(v1ardecl)
-overload totype_tag with totype_tag_v1ardecl
+fun{} totype_tag_d1vardecl : totype_type(d1vardecl)
+overload totype_tag with totype_tag_d1vardecl
 
-fun{} totype_tag_f1undecl : totype_type(f1undecl)
-overload totype_tag with totype_tag_f1undecl
+fun{} totype_tag_d1fundecl : totype_type(d1fundecl)
+overload totype_tag with totype_tag_d1fundecl
 
 fun{} totype_tag_d1cstdecl : totype_type(d1cstdecl)
 overload totype_tag with totype_tag_d1cstdecl
@@ -249,6 +245,7 @@ fun{} argsof_d1arglst : argsof_type(d1arglst)
 overload argsof with argsof_d1arg
 overload argsof with argsof_d1arglst
 
+
 fun{} argsof_f1arg : argsof_type(f1arg)
 fun{} argsof_f1arglst : argsof_type(f1arglst)
 overload argsof with argsof_f1arg
@@ -279,8 +276,6 @@ overload argsof with argsof_d1exp
 overload argsof with argsof_d1explst
 overload argsof with argsof_d1expopt
 
-fun{} argsof_f1unarrow : argsof_type(f1unarrow)
-overload argsof with argsof_f1unarrow
 
 fun{} argsof_teqd1expopt : argsof_type(teqd1expopt)
 overload argsof with argsof_teqd1expopt
@@ -288,20 +283,20 @@ overload argsof with argsof_teqd1expopt
 fun{} argsof_wths1expopt : argsof_type(wths1expopt)
 overload argsof with argsof_wths1expopt
 
-fun{} argsof_v1aldecl : argsof_type(v1aldecl)
-fun{} argsof_v1aldeclist : argsof_type(v1aldeclist)
-overload argsof with argsof_v1aldecl
-overload argsof with argsof_v1aldeclist
+fun{} argsof_d1valdecl : argsof_type(d1valdecl)
+fun{} argsof_d1valdeclist : argsof_type(d1valdeclist)
+overload argsof with argsof_d1valdecl
+overload argsof with argsof_d1valdeclist
 
-fun{} argsof_v1ardecl : argsof_type(v1ardecl)
-fun{} argsof_v1ardeclist : argsof_type(v1ardeclist)
-overload argsof with argsof_v1ardecl
-overload argsof with argsof_v1ardeclist
+fun{} argsof_d1vardecl : argsof_type(d1vardecl)
+fun{} argsof_d1vardeclist : argsof_type(d1vardeclist)
+overload argsof with argsof_d1vardecl
+overload argsof with argsof_d1vardeclist
 
-fun{} argsof_f1undecl : argsof_type(f1undecl)
-fun{} argsof_f1undeclist : argsof_type(f1undeclist)
-overload argsof with argsof_f1undecl
-overload argsof with argsof_f1undeclist
+fun{} argsof_d1fundecl : argsof_type(d1fundecl)
+fun{} argsof_d1fundeclist : argsof_type(d1fundeclist)
+overload argsof with argsof_d1fundecl
+overload argsof with argsof_d1fundeclist
 
 fun{} argsof_d1cstdecl : argsof_type(d1cstdecl)
 fun{} argsof_d1cstdeclist : argsof_type(d1cstdeclist)
@@ -390,8 +385,6 @@ fun{} argsof_tag_d1exp_node : argsof_type(d1exp_node)
 overload argsof with argsof_d1exp_node
 overload argsof_tag with argsof_tag_d1exp_node
 
-fun{} argsof_tag_f1unarrow : argsof_type(f1unarrow)
-overload argsof_tag with argsof_tag_f1unarrow
 
 fun{} argsof_tag_teqd1expopt : argsof_type(teqd1expopt)
 overload argsof_tag with argsof_tag_teqd1expopt
@@ -399,14 +392,14 @@ overload argsof_tag with argsof_tag_teqd1expopt
 fun{} argsof_tag_wths1expopt : argsof_type(wths1expopt)
 overload argsof_tag with argsof_tag_wths1expopt
 
-fun{} argsof_tag_v1aldecl : argsof_type(v1aldecl)
-overload argsof_tag with argsof_tag_v1aldecl
+fun{} argsof_tag_d1valdecl : argsof_type(d1valdecl)
+overload argsof_tag with argsof_tag_d1valdecl
 
-fun{} argsof_tag_v1ardecl : argsof_type(v1ardecl)
-overload argsof_tag with argsof_tag_v1ardecl
+fun{} argsof_tag_d1vardecl : argsof_type(d1vardecl)
+overload argsof_tag with argsof_tag_d1vardecl
 
-fun{} argsof_tag_f1undecl : argsof_type(f1undecl)
-overload argsof_tag with argsof_tag_f1undecl
+fun{} argsof_tag_d1fundecl : argsof_type(d1fundecl)
+overload argsof_tag with argsof_tag_d1fundecl
 
 fun{} argsof_tag_d1cstdecl : argsof_type(d1cstdecl)
 overload argsof_tag with argsof_tag_d1cstdecl
@@ -428,3 +421,54 @@ overload argsof_tag with argsof_tag_labd1patlst
 
 fun{} argsof_tag_labd1explst : argsof_type(labd1explst)
 overload argsof_tag with argsof_tag_labd1explst
+
+
+//
+
+fun{} totype_d1typ : totype_type(d1typ)
+fun{} totype_d1typlst : totype_type(d1typlst)
+overload totype with totype_d1typ
+overload totype with totype_d1typlst
+
+fun{} totype_st1qua : totype_type(st1qua)
+fun{} totype_st1qualst : totype_type(st1qualst)
+overload totype with totype_st1qua
+overload totype with totype_st1qualst
+
+fun{} totype_st1inv : totype_type(st1inv)
+overload totype with totype_st1inv
+
+fun{} totype_d1typ_node : totype_type(d1typ_node)
+fun{} totype_tag_d1typ_node : totype_type(d1typ_node)
+overload totype with totype_d1typ_node
+overload totype_tag with totype_tag_d1typ_node
+
+fun{} totype_tag_st1qua : totype_type(st1qua)
+overload totype_tag with totype_tag_st1qua
+fun{} totype_tag_st1inv : totype_type(st1inv)
+overload totype_tag with totype_tag_st1inv
+
+
+fun{} argsof_d1typ : argsof_type(d1typ)
+fun{} argsof_d1typlst : argsof_type(d1typlst)
+overload argsof with argsof_d1typ
+overload argsof with argsof_d1typlst
+
+fun{} argsof_st1qua : argsof_type(st1qua)
+fun{} argsof_st1qualst : argsof_type(st1qualst)
+overload argsof with argsof_st1qua
+overload argsof with argsof_st1qualst
+
+fun{} argsof_st1inv : argsof_type(st1inv)
+overload argsof with argsof_st1inv
+
+
+fun{} argsof_d1typ_node : argsof_type(d1typ_node)
+fun{} argsof_tag_d1typ_node : argsof_type(d1typ_node)
+overload argsof with argsof_d1typ_node
+overload argsof_tag with argsof_tag_d1typ_node
+
+fun{} argsof_tag_st1qua : argsof_type(st1qua)
+overload argsof_tag with argsof_tag_st1qua
+fun{} argsof_tag_st1inv : argsof_type(st1inv)
+overload argsof_tag with argsof_tag_st1inv

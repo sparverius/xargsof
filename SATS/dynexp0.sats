@@ -112,20 +112,20 @@ overload totype with totype_teqd0expopt
 fun{} totype_wths0expopt : totype_type(wths0expopt)
 overload totype with totype_wths0expopt
 
-fun{} totype_v0aldecl : totype_type(v0aldecl)
-fun{} totype_v0aldeclist : totype_type(v0aldeclist)
-overload totype with totype_v0aldecl
-overload totype with totype_v0aldeclist
+fun{} totype_d0valdecl : totype_type(d0valdecl)
+fun{} totype_d0valdeclist : totype_type(d0valdeclist)
+overload totype with totype_d0valdecl
+overload totype with totype_d0valdeclist
 
-fun{} totype_v0ardecl : totype_type(v0ardecl)
-fun{} totype_v0ardeclist : totype_type(v0ardeclist)
-overload totype with totype_v0ardecl
-overload totype with totype_v0ardeclist
+fun{} totype_d0vardecl : totype_type(d0vardecl)
+fun{} totype_d0vardeclist : totype_type(d0vardeclist)
+overload totype with totype_d0vardecl
+overload totype with totype_d0vardeclist
 
-fun{} totype_f0undecl : totype_type(f0undecl)
-fun{} totype_f0undeclist : totype_type(f0undeclist)
-overload totype with totype_f0undecl
-overload totype with totype_f0undeclist
+fun{} totype_d0fundecl : totype_type(d0fundecl)
+fun{} totype_d0fundeclist : totype_type(d0fundeclist)
+overload totype with totype_d0fundecl
+overload totype with totype_d0fundeclist
 
 fun{} totype_d0cstdecl : totype_type(d0cstdecl)
 fun{} totype_d0cstdeclist : totype_type(d0cstdeclist)
@@ -271,14 +271,14 @@ overload totype_tag with totype_tag_teqd0expopt
 fun{} totype_tag_wths0expopt : totype_type(wths0expopt)
 overload totype_tag with totype_tag_wths0expopt
 
-fun{} totype_tag_v0aldecl : totype_type(v0aldecl)
-overload totype_tag with totype_tag_v0aldecl
+fun{} totype_tag_d0valdecl : totype_type(d0valdecl)
+overload totype_tag with totype_tag_d0valdecl
 
-fun{} totype_tag_v0ardecl : totype_type(v0ardecl)
-overload totype_tag with totype_tag_v0ardecl
+fun{} totype_tag_d0vardecl : totype_type(d0vardecl)
+overload totype_tag with totype_tag_d0vardecl
 
-fun{} totype_tag_f0undecl : totype_type(f0undecl)
-overload totype_tag with totype_tag_f0undecl
+fun{} totype_tag_d0fundecl : totype_type(d0fundecl)
+overload totype_tag with totype_tag_d0fundecl
 
 fun{} totype_tag_d0cstdecl : totype_type(d0cstdecl)
 overload totype_tag with totype_tag_d0cstdecl
@@ -419,20 +419,20 @@ overload argsof with argsof_teqd0expopt
 fun{} argsof_wths0expopt : argsof_type(wths0expopt)
 overload argsof with argsof_wths0expopt
 
-fun{} argsof_v0aldecl : argsof_type(v0aldecl)
-fun{} argsof_v0aldeclist : argsof_type(v0aldeclist)
-overload argsof with argsof_v0aldecl
-overload argsof with argsof_v0aldeclist
+fun{} argsof_d0valdecl : argsof_type(d0valdecl)
+fun{} argsof_d0valdeclist : argsof_type(d0valdeclist)
+overload argsof with argsof_d0valdecl
+overload argsof with argsof_d0valdeclist
 
-fun{} argsof_v0ardecl : argsof_type(v0ardecl)
-fun{} argsof_v0ardeclist : argsof_type(v0ardeclist)
-overload argsof with argsof_v0ardecl
-overload argsof with argsof_v0ardeclist
+fun{} argsof_d0vardecl : argsof_type(d0vardecl)
+fun{} argsof_d0vardeclist : argsof_type(d0vardeclist)
+overload argsof with argsof_d0vardecl
+overload argsof with argsof_d0vardeclist
 
-fun{} argsof_f0undecl : argsof_type(f0undecl)
-fun{} argsof_f0undeclist : argsof_type(f0undeclist)
-overload argsof with argsof_f0undecl
-overload argsof with argsof_f0undeclist
+fun{} argsof_d0fundecl : argsof_type(d0fundecl)
+fun{} argsof_d0fundeclist : argsof_type(d0fundeclist)
+overload argsof with argsof_d0fundecl
+overload argsof with argsof_d0fundeclist
 
 fun{} argsof_d0cstdecl : argsof_type(d0cstdecl)
 fun{} argsof_d0cstdeclist : argsof_type(d0cstdeclist)
@@ -576,14 +576,14 @@ overload argsof_tag with argsof_tag_teqd0expopt
 fun{} argsof_tag_wths0expopt : argsof_type(wths0expopt)
 overload argsof_tag with argsof_tag_wths0expopt
 
-fun{} argsof_tag_v0aldecl : argsof_type(v0aldecl)
-overload argsof_tag with argsof_tag_v0aldecl
+fun{} argsof_tag_d0valdecl : argsof_type(d0valdecl)
+overload argsof_tag with argsof_tag_d0valdecl
 
-fun{} argsof_tag_v0ardecl : argsof_type(v0ardecl)
-overload argsof_tag with argsof_tag_v0ardecl
+fun{} argsof_tag_d0vardecl : argsof_type(d0vardecl)
+overload argsof_tag with argsof_tag_d0vardecl
 
-fun{} argsof_tag_f0undecl : argsof_type(f0undecl)
-overload argsof_tag with argsof_tag_f0undecl
+fun{} argsof_tag_d0fundecl : argsof_type(d0fundecl)
+overload argsof_tag with argsof_tag_d0fundecl
 
 fun{} argsof_tag_d0cstdecl : argsof_type(d0cstdecl)
 overload argsof_tag with argsof_tag_d0cstdecl
@@ -608,3 +608,55 @@ overload argsof_tag with argsof_tag_d0macdef
 
 fun{} argsof_tag_wd0eclseq : argsof_type(wd0eclseq)
 overload argsof_tag with argsof_tag_wd0eclseq
+
+
+fun{} totype_d0typ : totype_type(d0typ)
+fun{} totype_d0typlst : totype_type(d0typlst)
+overload totype with totype_d0typ
+overload totype with totype_d0typlst
+
+fun{} totype_st0qua : totype_type(st0qua)
+fun{} totype_st0qualst : totype_type(st0qualst)
+overload totype with totype_st0qua
+overload totype with totype_st0qualst
+
+fun{} totype_st0inv : totype_type(st0inv)
+overload totype with totype_st0inv
+
+fun{} totype_d0typ_node : totype_type(d0typ_node)
+fun{} totype_tag_d0typ_node : totype_type(d0typ_node)
+overload totype with totype_d0typ_node
+overload totype_tag with totype_tag_d0typ_node
+
+fun{} totype_tag_st0qua : totype_type(st0qua)
+overload totype_tag with totype_tag_st0qua
+fun{} totype_tag_st0inv : totype_type(st0inv)
+overload totype_tag with totype_tag_st0inv
+
+fun{} argsof_d0typ : argsof_type(d0typ)
+fun{} argsof_d0typlst : argsof_type(d0typlst)
+overload argsof with argsof_d0arg
+overload argsof with argsof_d0arglst
+
+fun{} argsof_st0qua : argsof_type(st0qua)
+fun{} argsof_st0qualst : argsof_type(st0qualst)
+overload argsof with argsof_st0qua
+overload argsof with argsof_st0qualst
+
+fun{} argsof_st0inv : argsof_type(st0inv)
+overload argsof with argsof_st0inv
+
+fun{} argsof_d0typ_node : argsof_type(d0typ_node)
+fun{} argsof_tag_d0typ_node : argsof_type(d0typ_node)
+overload argsof with argsof_d0typ_node
+overload argsof_tag with argsof_tag_d0typ_node
+
+fun{} argsof_st0qua : argsof_type(st0qua)
+fun{} argsof_tag_st0qua : argsof_type(st0qua)
+overload argsof with argsof_st0qua
+overload argsof_tag with argsof_tag_st0qua
+
+fun{} argsof_st0inv : argsof_type(st0inv)
+fun{} argsof_tag_st0inv : argsof_type(st0inv)
+overload argsof with argsof_st0inv
+overload argsof_tag with argsof_tag_st0inv

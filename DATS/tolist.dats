@@ -105,6 +105,21 @@ macdef tolist10{a:t@ype}(fopr, a, b, c, d, e, f, g, h, i, j) =
     ,(fopr)(,(j))
   )
 
+macdef tolist11{a:t@ype}(fopr, a, b, c, d, e, f, g, h, i, j, k) =
+  $list{a}
+  (
+    ,(fopr)(,(a)),
+    ,(fopr)(,(b)),
+    ,(fopr)(,(c)),
+    ,(fopr)(,(d)),
+    ,(fopr)(,(e)),
+    ,(fopr)(,(f)),
+    ,(fopr)(,(g)),
+    ,(fopr)(,(h)),
+    ,(fopr)(,(i)),
+    ,(fopr)(,(j)),
+    ,(fopr)(,(k))
+  )
 
 
 

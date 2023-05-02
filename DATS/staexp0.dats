@@ -31,6 +31,9 @@ implement{} argsof_s0ymb(x0) = tlist1(x0.node())
 implement{} argsof_sq0eid(x0) = tlist1(x0)
 implement{} argsof_dq0eid(x0) = tlist1(x0)
 implement{} argsof_g0exp(x0) = tlist1(x0.node())
+implement{} argsof_g0exp_THEN(x0) = tlist1(x0)
+implement{} argsof_g0exp_ELSE(x0) = tlist1(x0)
+implement{} argsof_g0nam(x0) = tlist1(x0.node())
 implement{} argsof_g0marg(x0) = tlist1(x0.node())
 implement{} argsof_sort0(x0) = tlist1(x0.node())
 implement{} argsof_s0rtcon(x0) = tlist1(x0.node())
@@ -106,6 +109,7 @@ implement{} argsof_s0rtconlst(x) = tlist1(x)
 implement{} argsof_d0atconlst(x) = tlist1(x)
 implement{} argsof_sort0opt(x) = tlist1(x)
 implement{} argsof_g0explst(x) = tlist1(x)
+implement{} argsof_g0namlst(x) = tlist1(x)
 implement{} argsof_g0marglst(x) = tlist1(x)
 implement{} argsof_t0marglst(x) = tlist1(x)
 implement{} argsof_sort0lst(x) = tlist1(x)
@@ -171,15 +175,47 @@ case+ l0 of
 
 
 implement{}
+argsof_tag_g0nam_node(x0) =
+(
+case+ x0 of
+| G0Nid0(g0eid) => tlist1(g0eid)
+| G0Nint(t0int) => tlist1(t0int)
+| G0Nflt(t0flt) => tlist1(t0flt)
+| G0Nchr(t0chr) => tlist1(t0chr)
+| G0Nstr(t0str) => tlist1(t0str)
+| G0Nlist(token0, g0explst, token1) => tlist3(token0, g0explst, token1)
+| G0Nnone1(token) => tlist1(token)
+)
+
+
+
+implement{}
+argsof_tag_g0exp_THEN_node(x0) =
+(
+case+ x0 of
+| g0exp_THEN(tok1, g0e) => tlist2(tok1, g0e)
+)
+implement{}
+argsof_tag_g0exp_ELSE_node(x0) =
+(
+case+ x0 of
+| g0exp_ELSE(tok1, g0e) => tlist2(tok1, g0e)
+)
+
+
+implement{}
 argsof_tag_g0exp_node(x0) =
 (
 case+ x0 of
-| G0Eid(g0eid) => tlist1(g0eid)
+| G0Eid0(g0eid) => tlist1(g0eid)
 | G0Eint(t0int) => tlist1(t0int)
+| G0Eflt(t0flt) => tlist1(t0flt)
+| G0Echr(t0chr) => tlist1(t0chr)
 | G0Estr(t0str) => tlist1(t0str)
 | G0Eapps(g0explst) => tlist1(g0explst)
+| G0Eif0(a, b, c, d, e) => tlist5(a, b, c, d, e)
 | G0Elist(token0, g0explst, token1) => tlist3(token0, g0explst, token1)
-| G0Enone(token) => tlist1(token)
+| G0Enone1(token) => tlist1(token)
 )
 
 
@@ -188,7 +224,7 @@ argsof_tag_s0ymb_node(x0) =
 (
 case+ x0 of
 | S0YMBi0dnt(id0) => tlist1(id0)
-| S0YMBdtlab(dot1, lab2) => tlist2(dot1, lab2)
+//| S0YMBdtlab(dot1, lab2) => tlist2(dot1, lab2)
 | S0YMBbrack(tok1, tok2) => tlist2(tok1, tok2)
 )
 
@@ -228,7 +264,8 @@ case+ x0 of
 | S0Tid0(tid) => tlist1(tid)
 | S0Tint(int) => tlist1(int)
 | S0Tapps(s0ts) => tlist1(s0ts)
-| S0Tlist(t0, s0ts, t1) => tlist3(t0, s0ts, t1)
+| S0Tlpar(t0, s0ts, t1) => tlist3(t0, s0ts, t1)
+//| S0Tlist(t0, s0ts, t1) => tlist3(t0, s0ts, t1)
 | S0Tqual(q0, s0t) => tlist2(q0, s0t)
 | S0Tnone(tok) => tlist1(tok)
 )
@@ -330,7 +367,7 @@ implement{}
 argsof_tag_s0exp_node(x0) =
 (
 case+ x0 of
-| S0Eid(sid) => tlist1(sid)
+| S0Eid0(sid) => tlist1(sid)
 | S0Eop1(opid) => tlist1(opid)
 | S0Eop2(tbeg, opid, tend) => tlist3(tbeg, opid, tend)
 | S0Eint(i0) => tlist1(i0)
@@ -339,11 +376,11 @@ case+ x0 of
 | S0Estr(s0) => tlist1(s0)
 | S0Eapps(s0es) => tlist1(s0es)
 | S0Eimp(tbeg, s0es, tend) => tlist3(tbeg, s0es, tend)
-| S0Eparen(tbeg, s0es, tend) => tlist3(tbeg, s0es, tend)
+| S0Elpar(tbeg, s0es, tend) => tlist3(tbeg, s0es, tend)
 | S0Eforall(tbeg, s0qs, tend) => tlist3(tbeg, s0qs, tend)
 | S0Eexists(tbeg, s0qs, tend) => tlist3(tbeg, s0qs, tend)
-| S0Etuple(tbeg, topt, s0es, tend) => tlist4(tbeg, topt, s0es, tend)
-| S0Erecord(tbeg, topt, s0es, tend) => tlist4(tbeg, topt, s0es, tend)
+| S0Etrcd1(tbeg, topt, s0es, tend) => tlist4(tbeg, topt, s0es, tend)
+| S0Etrcd2(tbeg, topt, s0es, tend) => tlist4(tbeg, topt, s0es, tend)
 | S0Elam(tbeg, arg0, res1, tok1, s0e0, tend) =>
   tlist6(tbeg, arg0, res1, tok1, s0e0, tend)
 | S0Eanno(s0e, ann) => tlist2(s0e, ann)

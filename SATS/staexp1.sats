@@ -4,6 +4,15 @@
 #staload "./argsof.sats"
 
 
+fun{} totype_f1unarrow : totype_type(f1unarrow)
+overload totype with totype_f1unarrow
+fun{} totype_tag_f1unarrow : totype_type(f1unarrow)
+overload totype_tag with totype_tag_f1unarrow
+fun{} argsof_f1unarrow : argsof_type(f1unarrow)
+overload argsof with argsof_f1unarrow
+fun{} argsof_tag_f1unarrow : argsof_type(f1unarrow)
+overload argsof_tag with argsof_tag_f1unarrow
+
 fun{} totype_g1exp : totype_type(g1exp)
 fun{} totype_g1explst : totype_type(g1explst)
 fun{} totype_g1expopt : totype_type(g1expopt)
@@ -343,3 +352,40 @@ fun{} argsof_d1atype_node : argsof_type(d1atype_node)
 fun{} argsof_tag_d1atype_node : argsof_type(d1atype_node)
 overload argsof with argsof_d1atype_node
 overload argsof_tag with argsof_tag_d1atype_node
+
+//
+
+//fun{} totype_g1nam : totype_type(g1nam)
+fun{} totype_g1namlst : totype_type(g1namlst)
+fun{} totype_g1namopt : totype_type(g1namopt)
+//overload totype with totype_g1nam
+overload totype with totype_g1namlst
+overload totype with totype_g1namopt
+
+
+fun{} totype_g1mac : totype_type(g1mac)
+overload totype with totype_g1mac
+
+fun{} totype_g1nam : totype_type(g1nam)
+fun{} totype_tag_g1nam : totype_type(g1nam)
+overload totype with totype_g1nam
+overload totype_tag with totype_tag_g1nam
+
+
+fun{} argsof_g1nam : argsof_type(g1nam)
+fun{} argsof_g1namlst : argsof_type(g1namlst)
+fun{} argsof_g1namopt : argsof_type(g1namopt)
+overload argsof with argsof_g1nam
+overload argsof with argsof_g1namlst
+overload argsof with argsof_g1namopt
+
+fun{} argsof_g1mac : argsof_type(g1mac)
+overload argsof with argsof_g1mac
+
+//fun{} argsof_g1nam_node : argsof_type(g1nam)
+fun{} argsof_tag_g1nam : argsof_type(g1nam)
+//overload argsof with argsof_g1nam
+overload argsof_tag with argsof_tag_g1nam
+
+fun{} argsof_tag_g1mac : argsof_type(g1mac)
+overload argsof_tag with argsof_tag_g1mac

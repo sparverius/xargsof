@@ -100,6 +100,21 @@ macdef tlist10(a, b, c, d, e, f, g, h, i, j) =
       ,(j)
     )
 
+macdef tlist11(a, b, c, d, e, f, g, h, i, j, k) =
+    tolist11{ret_list_type}(totype,
+      ,(a),
+      ,(b),
+      ,(c),
+      ,(d),
+      ,(e),
+      ,(f),
+      ,(g),
+      ,(h),
+      ,(i),
+      ,(j),
+      ,(k)
+    )
+
 
 (* ****** ****** *)
 

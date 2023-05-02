@@ -1,5 +1,5 @@
 #include "./../HATS/libxatsopt.hats"
-#staload "{$x}/SATS/stamp0.sats"
+#staload "{$x}/SATS/xstamp0.sats"
 
 #staload "./../SATS/argsof.sats"
 #staload "./../SATS/stamp0.sats"

@@ -27,7 +27,7 @@ implement{} argsof_t2ype(x0) = tlist1(x0)
 implement{} argsof_labt2ype(lt2p) = tlist1(lt2p)
 implement{} argsof_labt2ypelst(lt2ps) = tlist1(lt2ps)
 
-implement{} argsof_t2xtv(x0) = tlist2(x0.stamp(), x0.type())
+implement{} argsof_t2xtv(x0) = tlist1(x0) //tlist2(x0.stamp(), x0.type())
 
 
 (* implement{} argsof_t2ype_node(x0) = argsof_tag_t2ype_node<>(x0) *)
@@ -58,5 +58,6 @@ implement{}
 argsof_tag_labt2ype(lt2p) =
 (
 case+ lt2p of
-| TLABELED(l0, t2p) => tlist2(l0, t2p)
+| _ => tlist1("xargsof/SATS/statyp2.dats .... I HAVE NO IDEA")
+//| TLABELED(l0, t2p) => tlist2(l0, t2p)
 )

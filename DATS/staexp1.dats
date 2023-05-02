@@ -1,6 +1,7 @@
 #include "./../HATS/libxatsopt.hats"
 #staload "{$x}/SATS/staexp0.sats"
 #staload "{$x}/SATS/staexp1.sats"
+#staload "{$x}/DATS/gmacro1_define.dats"
 
 #staload "./../SATS/argsof.sats"
 #staload "./../SATS/staexp1.sats"
@@ -16,7 +17,7 @@
 //
 #include "./mac.dats"
 //
-
+//#dynload "{$x}/DATS/gmacro1_define.dats"
 (*
 #define INCLUDE_LOCATION
 *)
@@ -24,6 +25,8 @@
 (*
 #ifndef INCLUDE_LOCATION
 *)
+implement{} argsof_g1mac(x0) = tlist1(x0)
+implement{} argsof_g1nam(x0) = tlist1(x0)
 implement{} argsof_g1exp(x0) = tlist1(x0.node())
 implement{} argsof_g1marg(x0) = tlist1(x0.node())
 implement{} argsof_sort1(x0) = tlist1(x0.node())
@@ -74,6 +77,8 @@ implement{} argsof_t1arglst(x) = tlist1(x)
 implement{} argsof_s1rtconlst(x) = tlist1(x)
 implement{} argsof_d1atconlst(x) = tlist1(x)
 implement{} argsof_sort1opt(x) = tlist1(x)
+implement{} argsof_g1namlst(x) = tlist1(x)
+implement{} argsof_g1namopt(x) = tlist1(x)
 implement{} argsof_g1explst(x) = tlist1(x)
 implement{} argsof_g1expopt(x) = tlist1(x)
 implement{} argsof_d1tsortlst(x) = tlist1(x)
@@ -91,15 +96,60 @@ implement{}
 argsof_tag_g1exp_node(x0) =
 (
 case+ x0 of
-| G1Eid(tok_sym) => tlist1(tok_sym)
+| G1Eid0(tok_sym) => tlist1(tok_sym)
 | G1Eint(int) => tlist1(int)
+| G1Eflt(flt) => tlist1(flt)
+| G1Echr(tchr) => tlist1(tchr)
 | G1Estr(tstr) => tlist1(tstr)
 | G1Eapp() => tlist0()
 | G1Eapp1(g1e0, g1e1) => tlist2(g1e0, g1e1)
 | G1Eapp2(g1e0, g1e1, g1e2) => tlist3(g1e0, g1e1, g1e2)
+| G1Eif0(g1e0, g1e1, g1e2) => tlist3(g1e0, g1e1, g1e2)
 | G1Elist(g1es) => tlist1(g1es)
-| G1Enone(loc) => tlist1(loc)
+| G1Enone0() => tlist0()
+| G1Enone1(loc) => tlist1(loc)
 )
+
+implement{}
+argsof_tag_g1nam(x0) =
+(
+case+ x0 of
+| G1Nnil() => tlist0()
+| G1Nid0(tok_sym) => tlist1(tok_sym)
+| G1Nint(flt) => tlist1(flt)
+| G1Nflt(flt) => tlist1(flt)
+| G1Nstr(flt) => tlist1(flt)
+| G1Nlist(flt) => tlist1(flt)
+| G1Nnone0() => tlist0()
+| G1Nnone1(flt) => tlist1(flt)
+)
+
+implement{}
+argsof_tag_g1mac(x0) = let
+//val () = $showtype(x0)
+in
+(
+case+ x0 of
+| _ => tlist1("MACRO NOT IMPLEMENTED YET")
+(*
+| G1Mid0 (g1mid) => tlist1(g1mid)
+| G1Mint (i0) => tlist1(i0)
+| G1Mbtf (b0) => tlist1(b0)
+| G1Mchr (c0) => tlist1(c0)
+| G1Mstr (s0) => tlist1(s0)
+| G1Mif0 (gm0, gm1, gm2) => tlist3(gm0, gm1, gm2)
+| G1Mlam0 (g1ms, g1m) => tlist2(g1ms, g1m)
+| G1Mapps (g1mac, g1maclst) => tlist2(g1mac, g1maclst)
+| G1Msubs (g1mac, g1menv) => tlist2(g1mac, g1menv)
+| G1Msexp (s1exp) => tlist1(s1exp)
+| G1Mdpat (d1pat) => tlist1(d1pat)
+| G1Mdexp (d1exp) => tlist1(d1exp)
+| G1Mnone0 () => tlist0()
+| G1Mnone1 (g1exp) => tlist1(g1exp)
+*)
+)
+end
+
 
 
 implement{}
@@ -225,7 +275,7 @@ implement{}
 argsof_tag_s1exp_node(x0) =
 (
 case+ x0 of
-| S1Eid(sid) => tlist1(sid)
+| S1Eid0(sid) => tlist1(sid)
 | S1Eint(tok) => tlist1(tok)
 | S1Echr(tok) => tlist1(tok)
 | S1Eflt(tok) => tlist1(tok)
@@ -239,12 +289,12 @@ case+ x0 of
 (*
 | S1Eapp(s1e0, s1es) => tlist2(s1e0, s1es)
 *)
-| S1Elist(s1es) => tlist1(s1es)
-| S1Elist(s1es1, s1es2) => tlist2(s1es1, s1es2)
-| S1Etuple(k0, s1es) => tlist2(k0, s1es)
-| S1Etuple(k0, s1es1, s1es2) => tlist3(k0, s1es1, s1es2)
-| S1Erecord(k0, ls1es) => tlist2(k0, ls1es)
-| S1Erecord(k0, ls1es1, ls1es2) => tlist3(k0, ls1es1, ls1es2)
+| S1El1st(s1es) => tlist1(s1es)
+| S1El2st(s1es1, s1es2) => tlist2(s1es1, s1es2)
+| S1Etrcd1(k0, s1es) => tlist2(k0, s1es)
+| S1Etrcd1(k0, s1es1, s1es2) => tlist3(k0, s1es1, s1es2)
+| S1Etrcd2(k0, ls1es) => tlist2(k0, ls1es)
+| S1Etrcd2(k0, ls1es1, ls1es2) => tlist3(k0, ls1es1, ls1es2)
 | S1Eforall(s1qs) => tlist1(s1qs)
 | S1Eexists(k0, s1qs) => tlist2(k0, s1qs)
 | S1Elam(arg, res, s1e) => tlist3(arg, res, s1e)

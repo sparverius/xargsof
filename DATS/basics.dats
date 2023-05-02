@@ -1,5 +1,5 @@
 #include "./../HATS/libxatsopt.hats"
-#staload "{$x}/SATS/basics.sats"
+#staload "{$x}/SATS/xbasics.sats"
 
 #staload "./../SATS/argsof.sats"
 #staload "./../SATS/basics.sats"
@@ -34,7 +34,8 @@ val res =
 case+ fnk of
 | FNKfn0() => "fn0"
 | FNKfnx() => "fnx"
-| FNKfn1() => "fun" // fn1
+| FNKfn1() => "fn1" // fn1
+| FNKfn2() => "fn2" // fn1
 | FNKfun() => "fun"
 | FNKprfn0() => "prfn0"
 | FNKprfn1() => "prfn1"

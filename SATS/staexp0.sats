@@ -537,3 +537,44 @@ overload argsof_tag with argsof_tag_d0atype_node
 
 fun{a:type} argsof_tag_sl0abled : argsof_type(sl0abled(a))
 overload argsof_tag with argsof_tag_sl0abled
+
+
+fun{} totype_g0nam : totype_type(g0nam)
+fun{} totype_g0namlst : totype_type(g0namlst)
+overload totype with totype_g0nam
+overload totype with totype_g0namlst
+
+fun{} totype_g0exp_THEN : totype_type(g0exp_THEN)
+fun{} totype_g0exp_ELSE : totype_type(g0exp_ELSE)
+overload totype with totype_g0exp_THEN
+overload totype with totype_g0exp_ELSE
+
+fun{} totype_g0nam_node : totype_type(g0nam_node)
+overload totype with totype_g0nam_node
+fun{} totype_tag_g0nam_node : totype_type(g0nam_node)
+overload totype_tag with totype_tag_g0nam_node
+
+fun{} totype_tag_g0exp_THEN : totype_type(g0exp_THEN)
+overload totype_tag with totype_tag_g0exp_THEN
+fun{} totype_tag_g0exp_ELSE : totype_type(g0exp_ELSE)
+overload totype_tag with totype_tag_g0exp_ELSE
+
+fun{} argsof_g0exp_THEN : argsof_type(g0exp_THEN)
+fun{} argsof_g0exp_ELSE : argsof_type(g0exp_ELSE)
+overload argsof with argsof_g0exp_THEN
+overload argsof with argsof_g0exp_ELSE
+
+fun{} argsof_g0nam : argsof_type(g0nam)
+fun{} argsof_g0namlst : argsof_type(g0namlst)
+overload argsof with argsof_g0nam
+overload argsof with argsof_g0namlst
+
+fun{} argsof_g0nam_node : argsof_type(g0nam_node)
+fun{} argsof_tag_g0nam_node : argsof_type(g0nam_node)
+overload argsof with argsof_g0nam_node
+overload argsof_tag with argsof_tag_g0nam_node
+
+fun{} argsof_tag_g0exp_THEN_node : argsof_type(g0exp_THEN)
+overload argsof_tag with argsof_tag_g0exp_THEN_node
+fun{} argsof_tag_g0exp_ELSE_node : argsof_type(g0exp_ELSE)
+overload argsof_tag with argsof_tag_g0exp_ELSE_node

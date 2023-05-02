@@ -23,12 +23,14 @@
 //
 
 implement{} argsof_s2cst(x0) =
+  //tlist1(x0)
   (* tlist2(x0.stamp(), x0.sym()) *)
   tlist3(x0.stamp(), x0.sym(), x0.sort())
   (* tlist5(x0.stamp(), x0.sym(), x0.sort(), x0.sexp(), x0.type()) *)
 implement{} argsof_s2xtv(x0) =
   (* tlist2(x0.stamp(), x0.sort()) *)
   tlist3(x0.stamp(), x0.sort(), x0.sexp())
+  //tlist1(x0)
 
 (*
 // for including location information
@@ -43,11 +45,12 @@ implement{} argsof_s2xtv(x0) =
 
 implement{} argsof_s2var(x0) =
   (* tlist2(x0.stamp(), x0.sym()) *)
-  tlist3(x0.stamp(), x0.sym(), x0.sort())
+  //tlist3(x0.stamp(), x0.sym(), x0.sort())
+  tlist1(x0)
 implement{} argsof_sort2(s2t0) = tlist1(s2t0)
 implement{} argsof_t2bas(s2tb) = tlist1(s2tb)
-implement{} argsof_t2abs(x0) = tlist2(x0.stamp(), x0.sym())
-implement{} argsof_t2dat(x0) = tlist2(x0.stamp(), x0.sym())
+implement{} argsof_t2abs(x0) = tlist1(x0) //tlist2(x0.stamp(), x0.sym())
+implement{} argsof_t2dat(x0) = tlist1(x0) //tlist2(x0.stamp(), x0.sym())
 implement{} argsof_s2txt(s2tx) = tlist1(s2tx)
 implement{} argsof_labs2exp(ls2e) = tlist1(ls2e)
 implement{} argsof_s2itm(x0) = tlist1(x0)
@@ -137,6 +140,11 @@ case+ s2e0 of
 | S2Ecst(s2c) => tlist1(s2c)
 | S2Evar(s2v) => tlist1(s2v)
 | S2Extv(xtv) => tlist1(xtv)
+| S2Ebtf(xtv) => tlist1(xtv)
+| S2Etop(xtv) => tlist1(xtv)
+| S2Etpz(xtv) => tlist1(xtv)
+| S2Et2ype(xtv) => tlist1(xtv)
+| S2Eg1mac(a, b) => tlist2(a, b)
 (*
   let
     val s2e = s2xtv_get_sexp(xtv)
@@ -146,7 +154,7 @@ case+ s2e0 of
 | S2Eapp(s2fn, s2es) => tlist2(s2fn, s2es)
 | S2Elam(s2vs, body) => tlist2(s2vs, body)
 | S2Eany(knd) => tlist1(knd)
-| S2Etop(knd, s2e) => tlist2(knd, s2e)
+//| S2Etop(knd, s2e) => tlist2(knd, s2e)
 | S2Earg(knd, s2e) => tlist2(knd, s2e)
 | S2Eatx(bef, aft) => tlist2(bef, aft)
 | S2Efun(fc2, npf, arg, res) => tlist4(fc2, npf, arg, res)

@@ -9,6 +9,7 @@
 #staload "./../SATS/label0.sats"
 #staload "./../SATS/lexing.sats"
 #staload "./../SATS/filpath.sats"
+#staload "./../SATS/stamp0.sats"
 #staload "./../SATS/symbol.sats"
 #staload "./../SATS/staexp0.sats"
 #staload "./../SATS/dynexp0.sats"
@@ -51,8 +52,8 @@ implement{} argsof_sq2arg(x0) = tlist1(x0.s2vs())
 implement{} argsof_tq2arg(x0) = tlist1(x0.s2vs())
 implement{} argsof_ti2arg(x0) = tlist1(x0.s2es())
 
-implement{} argsof_v2aldecl(x0) = tlist1(x0)
-implement{} argsof_f2undecl(x0) = tlist1(x0)
+implement{} argsof_d2valdecl(x0) = tlist1(x0)
+implement{} argsof_d2fundecl(x0) = tlist1(x0)
 (*
 #else
 implement{} argsof_f2arg(x0) = tlist2(x0.loc(), x0.node())
@@ -71,8 +72,8 @@ implement{} argsof_sq2arg(x0) = tlist2(x0.loc(), x0)
 implement{} argsof_tq2arg(x0) = tlist2(x0.loc(), x0)
 implement{} argsof_ti2arg(x0) = tlist3(x0.loc(), x0, x0.s2es())
 
-implement{} argsof_v2aldecl(x0) = tlist2(x0.loc(), x0)
-implement{} argsof_f2undecl(x0) = tlist2(x0.loc(), x0)
+implement{} argsof_d2valdecl(x0) = tlist2(x0.loc(), x0)
+implement{} argsof_d2fundecl(x0) = tlist2(x0.loc(), x0)
 #endif
 *)
 
@@ -81,7 +82,7 @@ implement{} argsof_impld2cst(x0) = tlist1(x0)
 implement{} argsof_impls2cst(x0) = tlist1(x0)
 implement{} argsof_d2itm(x0) = tlist1(x0)
 implement{} argsof_d2pitm(x0) = tlist1(x0)
-implement{} argsof_v2ardecl(x0) = tlist1(x0)
+implement{} argsof_d2vardecl(x0) = tlist1(x0)
 
 
 
@@ -97,13 +98,14 @@ implement{} argsof_d2pitmlst(x) = tlist1(x)
 implement{} argsof_d2patlst(x) = tlist1(x)
 implement{} argsof_f2arglst(x) = tlist1(x)
 implement{} argsof_ti2arglst(x) = tlist1(x)
+
 implement{} argsof_d2gualst(x) = tlist1(x)
 implement{} argsof_d2claulst(x) = tlist1(x)
 implement{} argsof_d2explst(x) = tlist1(x)
 implement{} argsof_d2expopt(x) = tlist1(x)
-implement{} argsof_v2aldeclist(x) = tlist1(x)
-implement{} argsof_v2ardeclist(x) = tlist1(x)
-implement{} argsof_f2undeclist(x) = tlist1(x)
+implement{} argsof_d2valdeclist(x) = tlist1(x)
+implement{} argsof_d2vardeclist(x) = tlist1(x)
+implement{} argsof_d2fundeclist(x) = tlist1(x)
 implement{} argsof_d2eclist(x) = tlist1(x)
 
 
@@ -127,21 +129,30 @@ argsof_tag_d2pat_node(x0) =
 case x0 of
 | D2Pnil() => tlist0()
 | D2Pany() => tlist0()
+| D2Parg() => tlist0()
 | D2Pint(tok) => tlist1(tok)
+| D2Pi00(tok) => tlist1(tok)
+| D2Pb00(tok) => tlist1(tok)
+| D2Pc00(tok) => tlist1(tok)
+| D2Ps00(tok) => tlist1(tok)
 | D2Pbtf(tok) => tlist1(tok)
 | D2Pchr(tok) => tlist1(tok)
 | D2Pflt(tok) => tlist1(tok)
 | D2Pstr(tok) => tlist1(tok)
 | D2Pvar(d2v) => tlist1(d2v)
+| D2Pdap0(d2c0) => tlist1(d2c0)
+| D2Pdap1(d2c0) => tlist1(d2c0)
 | D2Pcon1(d2c0) => tlist1(d2c0)
 | D2Pcon2(d2cs) => tlist1(d2cs)
 | D2Psym0(sym, d2pis) => tlist2(sym, d2pis)
 | D2Psapp(d2f0, s2vs) => tlist2(d2f0, s2vs)
 | D2Pdapp(d2f0, npf0, d2ps) => tlist3(d2f0, npf0, d2ps)
-| D2Ptuple(knd, npf, d2ps) => tlist3(knd, npf, d2ps)
-| D2Panno(d2p1, s2e2) => tlist2(d2p1, s2e2)
+| D2Ptrcd1(knd, npf, d2ps) => tlist3(knd, npf, d2ps)
+| D2Panno(d2p1, s2e2, c) => tlist3(d2p1, s2e2, c)
 | D2Pnone0() => tlist0()
 | D2Pnone1(d1psrc) => tlist1(d1psrc)
+//
+| D2Pg1mac(g1mac) => tlist1(g1mac)
 //
 | D2Pflat(d2p1) => tlist1(d2p1)
 | D2Pfree(d2p1) => tlist1(d2p1)
@@ -153,6 +164,14 @@ implement{}
 argsof_tag_d2exp_node(x0) =
 (
 case+ x0 of
+| D2Ei00(tok) => tlist1(tok)
+
+| D2Eb00(tok) => tlist1(tok)
+| D2Ec00(tok) => tlist1(tok)
+| D2Es00(tok) => tlist1(tok)
+| D2Edap0(tok) => tlist1(tok)
+
+
 | D2Eint(tok) => tlist1(tok)
 | D2Ebtf(tok) => tlist1(tok)
 | D2Echr(tok) => tlist1(tok)
@@ -171,7 +190,8 @@ case+ x0 of
 | D2Elet(d2cs, d2e2) => tlist2(d2cs, d2e2)
 | D2Ewhere(d2e1, d2cs) => tlist2(d2e1, d2cs)
 | D2Eseqn(d2es, d1e1) => tlist2(d2es, d1e1)
-| D2Etuple(knd, npf, d2es) => tlist3(knd, npf, d2es)
+| D2Etrcd1(knd, npf, d2es) => tlist3(knd, npf, d2es)
+| D2Ebrack(d2e1, d2e2) => tlist2(d2e1, d2e2)
 | D2Eassgn(d2e1, d2e2) => tlist2(d2e1, d2e2)
 | D2Edtsel(lab0, dpis, npf2, arg3) =>
   tlist4(lab0, dpis, npf2, arg3)
@@ -186,11 +206,12 @@ case+ x0 of
   )
 *)
 | D2Eif0(d2e1, d2e2, opt3) => tlist3(d2e1, d2e2, opt3)
-| D2Ecase(knd, d2e1, d2cls) => tlist3(knd, d2e1, d2cls)
+| D2Eif1(d2e1, d2e2, opt3, d) => tlist4(d2e1, d2e2, opt3, d)
+| D2Ecas0(knd, d2e1, d2cls) => tlist3(knd, d2e1, d2cls)
+| D2Ecas1(knd, d2, d2s, d) => tlist4(knd, d2, d2s, d)
 | D2Elam(knd, f2as, tres, arrw, body) => tlist5(knd, f2as, tres, arrw, body)
 | D2Efix(knd, fid, f2as, tres, arrw, body) => tlist6(knd, fid, f2as, tres, arrw, body)
-| D2Etry(token(*TRY*), d2exp(*val*), d2claulst) =>
-  tlist3(token, d2exp, d2claulst)
+| D2Etry0(token(*TRY*), d2exp(*val*), d2claulst) => tlist3(token, d2exp, d2claulst)
 (*
 | D2Eflat(d2e1) => tlist1(d2e1)
 *)
@@ -201,8 +222,10 @@ case+ x0 of
 //
 | D2Elazy(d2e1) => tlist1(d2e1)
 | D2Ellazy(d2e1, opt2) => tlist2(d2e1, opt2)
-| D2Eanno(d2e1, s2e2) => tlist2(d2e1, s2e2)
+| D2Eexist1(d2e1, opt2) => tlist2(d2e1, opt2)
+| D2Eanno(d2e1, s2e2, c) => tlist3(d2e1, s2e2, c)
 | D2Enone0() => tlist0()
+| D2Eg1mac(d1s) => tlist1(d1s)
 | D2Enone1(d1esrc) => tlist1(d1esrc)
 | D2Efree(d1esrc) => tlist1(d1esrc)
 )
@@ -212,6 +235,7 @@ implement{}
 argsof_tag_d2ecl_node(x0) =
 (
 case+ x0 of
+| D2Cd1ecl(d2c) => tlist1(d2c)
 | D2Cstatic(tok, d2c) => tlist2(tok, d2c)
 | D2Cextern(tok, d2c) => tlist2(tok, d2c)
 | D2Cinclude(tok, src, knd, fopt, body) =>
@@ -228,13 +252,13 @@ case+ x0 of
 | D2Cabstype(s2c, df2) => tlist2(s2c, df2)
 | D2Cabsimpl(knd, sqid, def0) => tlist3(knd, sqid, def0)
 | D2Csymload(tok, sym0, dpi1) => tlist3(tok, sym0, dpi1)
-| D2Cvaldecl(knd, mopt, v2ds) => tlist3(knd, mopt, v2ds)
-| D2Cfundecl(knd, mopt, tqas, f2ds) => tlist4(knd, mopt, tqas, f2ds)
-| D2Cvardecl(knd, mopt, v2ds) => tlist3(knd, mopt, v2ds)
-| D2Cimpdecl1(knd, mopt, sqas, tqas, dqid, tias, f2as, res0, d2e1) =>
-  tlist9(knd, mopt, sqas, tqas, dqid, tias, f2as, res0, d2e1)
-| D2Cimpdecl2(knd, mopt, sqas, tqas, dqid, tias, f2as, res0, d2e1) =>
-  tlist9(knd, mopt, sqas, tqas, dqid, tias, f2as, res0, d2e1)
+| D2Cvaldclst(knd, mopt, v2ds) => tlist3(knd, mopt, v2ds)
+| D2Cfundclst(knd, mopt, tqas, f2ds) => tlist4(knd, mopt, tqas, f2ds)
+| D2Cvardclst(knd, mopt, v2ds) => tlist3(knd, mopt, v2ds)
+| D2Cimplmnt1(knd, mopt, sqas, tqas, dqid, tias, f2as, res0, d2e1, d10) =>
+  tlist10(knd, mopt, sqas, tqas, dqid, tias, f2as, res0, d2e1, d10)
+| D2Cimplmnt2(knd, mopt, sqas, tqas, dqid, tias, f2as, res0, d2e1, d10) =>
+  tlist10(knd, mopt, sqas, tqas, dqid, tias, f2as, res0, d2e1, d10)
 | D2Cdatasort(d1c, sort2lst) => tlist2(d1c, sort2lst)
 | D2Cexcptcon(d1ecl, d2conlst) => tlist2(d1ecl, d2conlst)
 | D2Cdatatype(d1c, s2cstlst) => tlist2(d1c, s2cstlst)
@@ -274,6 +298,36 @@ argsof_tag_tq2arg(x0) = ()
 implement{}
 argsof_tag_ti2arg(x0) = ()
 *)
+
+
+implement{} argsof_d2typ(x0) = tlist1(x0)
+implement{} argsof_st2inv(x0) = tlist1(x0)
+implement{} argsof_st2qua(x0) = tlist1(x0)
+implement{} argsof_st2qualst(x) = tlist1(x)
+
+
+implement{}
+argsof_tag_d2typ_node(x0) =
+(
+case+ x0 of
+| D2TYPsome_tok(arg0, opt1) => tlist2(arg0, opt1)
+| D2TYPsome_var(arg0, opt1) => tlist2(arg0, opt1)
+)
+
+implement{}
+argsof_tag_st2qua(x0) =
+(
+case+ x0 of
+| ST2QUAsome(loc, s2vars, s2exps) => tlist3(loc, s2vars, s2exps)
+)
+implement{}
+argsof_tag_st2inv(x0) =
+(
+case+ x0 of
+| ST2INVsome(loc, s2qs, d2ts) => tlist3(loc, s2qs, d2ts)
+)
+
+
 
 
 implement{}
@@ -322,24 +376,24 @@ case+ x0 of
 
 
 implement{}
-argsof_tag_v2aldecl(x0) = let
-  val+V2ALDECL(rcd) = x0
+argsof_tag_d2valdecl(x0) = let
+  val+D2VALDECL(rcd) = x0
 in
   tlist3(rcd.pat, rcd.def, rcd.wtp)
 end
 
 
 implement{}
-argsof_tag_v2ardecl(x0) = let
-  val+V2ARDECL(rcd) = x0
+argsof_tag_d2vardecl(x0) = let
+  val+D2VARDECL(rcd) = x0
 in
   tlist4(rcd.d2v, rcd.wth, rcd.res, rcd.ini)
 end
 
 
 implement{}
-argsof_tag_f2undecl(x0) = let
-  val+F2UNDECL(rcd) = x0
+argsof_tag_d2fundecl(x0) = let
+  val+D2FUNDECL(rcd) = x0
 in
-  tlist6(rcd.nam, rcd.d2c, rcd.arg, rcd.res, rcd.def, rcd.wtp)
+  tlist7(rcd.loc, rcd.nam, rcd.d2c, rcd.f2g, rcd.res, rcd.xnm, rcd.def)
 end

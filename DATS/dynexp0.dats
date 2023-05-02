@@ -33,9 +33,9 @@ implement{} argsof_sq0arglst(x) = tlist1(x)
 implement{} argsof_ti0arglst(x) = tlist1(x)
 implement{} argsof_labd0patlst(x) = tlist1(x)
 implement{} argsof_labd0explst(x) = tlist1(x)
-implement{} argsof_f0undeclist(x) = tlist1(x)
-implement{} argsof_v0aldeclist(x) = tlist1(x)
-implement{} argsof_v0ardeclist(x) = tlist1(x)
+implement{} argsof_d0fundeclist(x) = tlist1(x)
+implement{} argsof_d0valdeclist(x) = tlist1(x)
+implement{} argsof_d0vardeclist(x) = tlist1(x)
 implement{} argsof_d0expopt(x) = tlist1(x)
 
 
@@ -72,6 +72,7 @@ implement{} argsof_sq0arg(x0) = tlist1(x0.node())
 implement{} argsof_q0arg(x0) = tlist1(x0.node())
 implement{} argsof_a0typ(x0) = tlist1(x0.node())
 implement{} argsof_d0arg(x0) = tlist1(x0.node())
+
 implement{} argsof_f0arg(x0) = tlist1(x0.node())
 implement{} argsof_tq0arg(x0) = tlist1(x0.node())
 implement{} argsof_ti0arg(x0) = tlist1(x0.node())
@@ -82,10 +83,11 @@ implement{} argsof_d0gua(x0) = tlist1(x0.node())
 implement{} argsof_d0exp(x0) = tlist1(x0.node())
 implement{} argsof_endwhere(x0) = tlist1(x0)
 implement{} argsof_d0ecl(x0) = tlist1(x0.node())
-implement{} argsof_v0aldecl(x0) = tlist1(x0)
-implement{} argsof_v0ardecl(x0) = tlist1(x0)
-implement{} argsof_f0undecl(x0) = tlist1(x0)
+implement{} argsof_d0valdecl(x0) = tlist1(x0)
+implement{} argsof_d0vardecl(x0) = tlist1(x0)
+implement{} argsof_d0fundecl(x0) = tlist1(x0)
 implement{} argsof_d0cstdecl(x0) = tlist1(x0)
+
 (*
 #else
 implement{} argsof_q0arg(x0) = tlist2(x0.loc(), x0.node())
@@ -146,7 +148,6 @@ case+ x0 of
   // where val _ = $showtype(tbeg, arg0, opt1, tend) end
 )
 
-
 implement{}
 argsof_tag_f0arg_node(x0) =
 (
@@ -156,7 +157,6 @@ case+ x0 of
 | F0ARGsome_sta(tbeg, s0qs, tend) => tlist3(tbeg, s0qs, tend)
 | F0ARGsome_met(tbeg, s0es, tend) => tlist3(tbeg, s0es, tend)
 )
-
 
 implement{}
 argsof_tag_sq0arg_node(x0) =
@@ -196,7 +196,7 @@ implement{}
 argsof_tag_d0pat_node(x0) =
 (
 case+ x0 of
-| D0Pid(id) => tlist1(id)
+| D0Pid0(id) => tlist1(id)
 | D0Pint(i0) => tlist1(i0)
 | D0Pchr(c0) => tlist1(c0)
 | D0Pflt(f0) => tlist1(f0)
@@ -204,8 +204,8 @@ case+ x0 of
 | D0Papps(d0ps) => tlist1(d0ps)
 | D0Psqarg(tbeg, s0as, tend) => tlist3(tbeg, s0as, tend)
 | D0Pparen(tbeg, d0ps, tend) => tlist3(tbeg, d0ps, tend)
-| D0Ptuple(tbeg, topt, d0ps, tend) => tlist4(tbeg, topt, d0ps, tend)
-| D0Precord(tbeg, topt, ld0ps, tend) => tlist4(tbeg, topt, ld0ps, tend)
+| D0Ptrcd1(tbeg, topt, d0ps, tend) => tlist4(tbeg, topt, d0ps, tend)
+| D0Ptrcd2(tbeg, topt, ld0ps, tend) => tlist4(tbeg, topt, ld0ps, tend)
 | D0Panno(d0p, ann) => tlist2(d0p, ann)
 | D0Pqual(tok, d0p) => tlist2(tok, d0p)
 | D0Pnone(tok) => tlist1(tok)
@@ -261,22 +261,24 @@ implement{}
 argsof_tag_d0exp_node(x0) =
 (
 case+ x0 of
-| D0Eid(id) => tlist1(id)
+| D0Eid0(id) => tlist1(id)
 | D0Eint(i0) => tlist1(i0)
 | D0Echr(c0) => tlist1(c0)
 | D0Eflt(f0) => tlist1(f0)
 | D0Estr(s0) => tlist1(s0)
+| D0Eopid(s0) => tlist1(s0)
 | D0Eapps(d0es) => tlist1(d0es)
+| D0Eextnam(s0) => tlist1(s0)
+| D0Eexists(tbeg, s0es, tend) => tlist3(tbeg, s0es, tend)
 | D0Esqarg(tbeg, s0es, tend) => tlist3(tbeg, s0es, tend)
 | D0Etqarg(tbeg, s0es, tend) => tlist3(tbeg, s0es, tend)
 | D0Eparen(tbeg, d0es, tend) => tlist3(tbeg, d0es, tend)
-| D0Etuple(tbeg, topt, d0es, tend) => tlist4(tbeg, topt, d0es, tend)
-| D0Erecord(tbeg, topt, ld0es, tend) =>
-  tlist4(tbeg, topt, ld0es, tend)
-| D0Eif0(tif0, d0e1, d0e2, d0e3, tend) =>
-  tlist5(tif0, d0e1, d0e2, d0e3, tend)
-| D0Ecase(tok0, d0e1, tof2, tbar, d0cs, tend) =>
-  tlist6(tok0, d0e1, tof2, tbar, d0cs, tend)
+| D0Etrcd1(tbeg, topt, d0es, tend) => tlist4(tbeg, topt, d0es, tend)
+| D0Etrcd2(tbeg, topt, d0es, tend) => tlist4(tbeg, topt, d0es, tend)
+| D0Eif0(tif0, d0e1, d0e2, tend) => tlist4(tif0, d0e1, d0e2, tend)
+| D0Eif1(tif0, d0e1, d0e2, d0e3, tend) => tlist5(tif0, d0e1, d0e2, d0e3, tend)
+| D0Ecas0(tok0, d0e1, tof2, tbar, tend) => tlist5(tok0, d0e1, tof2, tbar, tend)
+| D0Ecas1(tok0, d0e1, tof2, tbar, d0cs, tend) => tlist6(tok0, d0e1, tof2, tbar, d0cs, tend)
 | D0Elet(tok0, d0cs, topt, d0es, tok2) =>
   tlist5(tok0, d0cs, topt, d0es, tok2)
 | D0Ewhere(d0e1, d0cs) => tlist2(d0e1, d0cs)
@@ -286,8 +288,7 @@ case+ x0 of
   tlist6(tok0, arg1, res2, farrw, fbody, tend)
 | D0Efix(tok0, fid0, arg1, res2, farrw, fbody, tend) =>
   tlist7(tok0, fid0, arg1, res2, farrw, fbody, tend)
-| D0Etry(tok0, d0exp, tok1(*WITH*), topt(*BAR*), d0claulst, tok2(*END*)) =>
-  tlist6(tok0, d0exp, tok1, topt, d0claulst, tok2)
+| D0Etry0(tok0, d0exp, tok1(*WITH*), topt(*BAR*), d0claulst, tok2(*END*)) => tlist6(tok0, d0exp, tok1, topt, d0claulst, tok2)
 | D0Eanno(d0e, ann) => tlist2(d0e, ann)
 | D0Equal(tok, d0e) => tlist2(tok, d0e)
 | D0Enone(tok) => tlist1(tok)
@@ -413,14 +414,10 @@ case+ x0 of
   tlist5(tok, sid, arg, res, tdef)
 | D0Cabsimpl(tok, sqid, smas, res0, teq1, def2) =>
   tlist6(tok, sqid, smas, res0, teq1, def2)
-| D0Cvaldecl(tok, mopt, d0cs) =>
-  tlist3(tok, mopt, d0cs)
-| D0Cvardecl(tok, mopt, d0cs) =>
-  tlist3(tok, mopt, d0cs)
-| D0Cfundecl(tok, mopt, tqas, d0cs) =>
-  tlist4(tok, mopt, tqas, d0cs)
-| D0Cimpdecl(tok, mopt, sqas, tqas, dqid, tias, f0as, res0, teq1, d0e2) =>
-  tlist10(tok, mopt, sqas, tqas, dqid, tias, f0as, res0, teq1, d0e2)
+| D0Cvaldclst(tok, mopt, d0cs) => tlist3(tok, mopt, d0cs)
+| D0Cvardclst(tok, mopt, d0cs) => tlist3(tok, mopt, d0cs)
+| D0Cfundclst(tok, mopt, tqas, d0cs) => tlist4(tok, mopt, tqas, d0cs)
+| D0Cimplmnt0(tok, mopt, sqas, tqas, dqid, tias, f0as, res0, teq1, d0e2) => tlist10(tok, mopt, sqas, tqas, dqid, tias, f0as, res0, teq1, d0e2)
 | D0Csymload(tok, sym, twth, dqid, tint) =>
   tlist5(tok, sym, twth, dqid, tint)
 | D0Cdatasort(tok, d0cs) => tlist2(tok, d0cs)
@@ -505,24 +502,24 @@ case+ x0 of
 
 
 implement{}
-argsof_tag_v0aldecl(x0) = let
-  val+V0ALDECL(rcd) = x0
+argsof_tag_d0valdecl(x0) = let
+  val+D0VALDECL(rcd) = x0
 in
   tlist4(rcd.pat, rcd.teq, rcd.def, rcd.wtp)
 end
 
 
 implement{}
-argsof_tag_v0ardecl(x0) = let
-  val+V0ARDECL(rcd) = x0
+argsof_tag_d0vardecl(x0) = let
+  val+D0VARDECL(rcd) = x0
 in
   tlist4(rcd.nam, rcd.wth, rcd.res, rcd.ini)
 end
 
 
 implement{}
-argsof_tag_f0undecl(x0) = let
-  val+F0UNDECL(rcd) = x0
+argsof_tag_d0fundecl(x0) = let
+  val+D0FUNDECL(rcd) = x0
 in
   tlist6(rcd.nam, rcd.arg, rcd.res, rcd.teq, rcd.def, rcd.wtp)
 end
@@ -534,3 +531,35 @@ argsof_tag_d0cstdecl(x0) = let
 in
   tlist4(rcd.nam, rcd.arg, rcd.res, rcd.def)
 end
+
+
+//
+
+implement{} argsof_d0typlst(x) = tlist1(x)
+implement{} argsof_st0qualst(x) = tlist1(x)
+implement{} argsof_d0typ(x0) = tlist1(x0.node())
+implement{} argsof_st0qua(x0) = tlist1(x0)
+implement{} argsof_st0inv(x0) = tlist1(x0)
+
+implement{}
+argsof_tag_d0typ_node(x0) =
+(
+case+ x0 of
+| D0TYPnone(tok) => tlist1(tok)
+| D0TYPsome(i0dnt, s0expopt) => tlist2(i0dnt, s0expopt)
+)
+
+implement{}
+argsof_tag_st0qua(x0) =
+(
+case+ x0 of
+| ST0QUAnone(tok) => tlist1(tok)
+| ST0QUAsome(tbeg, s0qs, tend) => tlist3(tbeg, s0qs, tend)
+)
+implement{}
+argsof_tag_st0inv(x0) =
+(
+case- x0 of
+| ST0INVnone(s0qs, tok) => tlist2(s0qs, tok)
+| ST0INVsome(s0qs, tok, d0ts, tend) => tlist4(s0qs, tok, d0ts, tend)
+)

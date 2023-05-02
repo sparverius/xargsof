@@ -101,6 +101,17 @@ overload totype with totype_fmodenvopt
 fun{} totype_s2xtv : totype_type(s2xtv)
 overload totype with totype_s2xtv
 
+(*
+fun{} totype_t2ype : totype_type(t2ype)
+overload totype with totype_t2ype
+fun{} totype_t2ypelst : totype_type(t2ypelst)
+fun{} totype_t2ypeopt : totype_type(t2ypeopt)
+overload totype with totype_t2ypelst
+overload totype with totype_t2ypeopt
+
+fun{} totype_k2xtv : totype_type(k2xtv)
+overload totype with totype_k2xtv
+*)
 
 //
 
@@ -112,6 +123,18 @@ overload argsof with argsof_fmodenvopt
 
 fun{} argsof_s2xtv : argsof_type(s2xtv)
 overload argsof with argsof_s2xtv
+
+fun{} argsof_t2ype : argsof_type(t2ype)
+fun{} argsof_t2ypelst : argsof_type(t2ypelst)
+fun{} argsof_t2ypeopt : argsof_type(t2ypeopt)
+overload argsof with argsof_t2ype
+overload argsof with argsof_t2ypelst
+overload argsof with argsof_t2ypeopt
+
+fun{} argsof_k2xtv : argsof_type(k2xtv)
+overload argsof with argsof_k2xtv
+
+
 
 fun{} argsof_sort2 : argsof_type(sort2)
 fun{} argsof_sort2lst : argsof_type(sort2lst)
